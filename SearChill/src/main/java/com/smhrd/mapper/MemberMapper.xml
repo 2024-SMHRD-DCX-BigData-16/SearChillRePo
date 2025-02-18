@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.MemberMapper">
+
+	<!-- 
+		인터페이스에서 해당하는 mapper로 넘어올 수 있는 조건
+		namespace가 인터페이스 이름과 동일하던가
+		xml 파일 이름과 인터페이스 이름이 동일하면 자동으로 찾음
+	 -->
+
+	<insert id="memberInsert" parameterType="com.smhrd.entity.Member">
+		insert into member values(#{email}, #{pw}, #{tel}, #{address})
+	</insert>
+
+	<!-- 파라미터 타입이나, 결과 타입 : 자바에서 기본적으로 제공하는 자료형이 아니라면 꼭 적어줘야한다! -->
+	<select id="memberSelectOne" parameterType="com.smhrd.entity.Member"
+								resultType="com.smhrd.entity.Member">
+		select * from Member where email = #{email} and pw = #{pw}
+		<!-- email, pw, tel, address -->
+	</select>
+
+	<update id="memberUpdate" parameterType="com.smhrd.entity.Member">
+		update Member set tel = #{tel}, address = #{address} where email = #{email} and pw = #{pw}
+	</update>
+
+	<select id="showMember" resultType="com.smhrd.entity.Member">
+		select * from Member
+	</select>
+
+	<delete id="deleteMember" parameterType="String">
+		delete from Member where email=#{email}
+	</delete>
+
+	<!-- 전달 받고 있는 데이터는?  -->
+	<select id="emailCheck" parameterType="String"
+							resultType="com.smhrd.entity.Member">
+		select * from Member where email =#{email}
+	</select>
+
+	
+
+
+
+</mapper>
