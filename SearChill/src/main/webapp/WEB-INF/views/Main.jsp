@@ -8,13 +8,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
-		<title>Forty by HTML5 UP</title>
+		<title>SearChill Main</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+				<!-- Scripts -->
 	</head>
 	<body>
 	
-	<h1>hi</h1>
+	<button onclick="location.href='mapMain'">지도</button>
 	
 	
 	
@@ -27,11 +28,6 @@
 	
 	
 	
-	
-	
-	
-	
-		<!-- Scripts -->
 
 	</body>
 </html>
