@@ -42,6 +42,7 @@
     <div class="menu">
         <a href="qrMain">QR코드 발급</a> 
         <a href="mapMain">지도</a>
+        <a href="lostItemForm">테스트용 lostItemForm</a>
         <a href="lost">유실물 종합안내</a>
         <a href="contact">문의사항</a>
     </div>

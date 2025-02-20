@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.zxing.BarcodeFormat;
@@ -23,6 +24,11 @@ public class QrController {
         return "QrMain";
     }
 
+    @RequestMapping("/lostItemForm")
+    public String lostItemForm() {
+        return "LostItemForm";
+    }
+    
     @GetMapping("/qrMake")
     public Object createQr(@RequestParam String url) throws WriterException, IOException {
         int width = 200;
@@ -36,6 +42,7 @@ public class QrController {
                     .body(out.toByteArray());
         }
     }
+    
     
 
 
