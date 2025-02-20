@@ -103,7 +103,7 @@
 	const serviceKey = "jmcNMfi%2Ftd9tkFOLg5mvQczw6r8Rw1GTrSXFjbTkrSiDZN2wkrQsBdsU9p3%2FOsgFNZFHQcz00Y3%2B2swL0NQgOg%3D%3D";
 		let itemData = []; // 습득물 데이터를 저장할 배열
 		let sortAscending = true; // 정렬 상태를 나타낼 변수
-		
+		let PRDT_NM = '${sessionScope.mapAddress.PRDT_NM}'
 		let pageNo = '${pageNo}'; //페이지를 정하는 변수
 		let numOfRows = 25;
 		// 첫 번째 요청 (경찰청)
@@ -111,6 +111,8 @@
 		var url1 = 'http://apis.data.go.kr/1320000/LosfundInfoInqireService/getLosfundInfoAccToLc';
 		var queryParams1 = '?' + encodeURIComponent('serviceKey') + '='
 				+ serviceKey; /*Service Key*/
+	    queryParams1 += '&' + encodeURIComponent('PRDT_NM') + '=' + encodeURIComponent(PRDT_NM);
+
 		queryParams1 += '&' + encodeURIComponent('pageNo') + '='
 				+ encodeURIComponent(pageNo);
 		queryParams1 += '&' + encodeURIComponent('numOfRows') + '='
@@ -181,6 +183,7 @@
 		var xhr3 = new XMLHttpRequest();
 		var url3 = 'http://apis.data.go.kr/1320000/LosPtfundInfoInqireService/getPtLosfundInfoAccToLc'; // 포털 URL
 		var queryParams3 = '?' + encodeURIComponent('serviceKey') + '='	+ serviceKey; //Service Key
+        queryParams3 += '&' + encodeURIComponent('PRDT_NM') + '=' + encodeURIComponent(PRDT_NM);
 		queryParams3 += '&' + encodeURIComponent('pageNo') + '='+ encodeURIComponent(pageNo);
 		queryParams3 += '&' + encodeURIComponent('numOfRows') + '='	+ encodeURIComponent('10');
 		queryParams3 += '&' + encodeURIComponent('ADDR') + '='+ encodeURIComponent('${sessionScope.mapAddress.roadAddress}');
@@ -243,6 +246,7 @@
 		
 		// 세번째 요청
 		var additionalQueryParams1 = '?' + encodeURIComponent('serviceKey') + '=' + serviceKey;
+		additionalQueryParams1 += '&' + encodeURIComponent('PRDT_NM') + '=' + encodeURIComponent(PRDT_NM);
 		additionalQueryParams1 += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent(pageNo);
 		additionalQueryParams1 += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent(numOfRows);
 		additionalQueryParams1 += '&' + encodeURIComponent('ADDR') + '=' + encodeURIComponent('${sessionScope.mapAddress.jibunAddress}');

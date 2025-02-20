@@ -40,7 +40,7 @@
     </div>
 
     <div class="menu">
-        <a href="qr">QR코드 발급</a> 
+        <a href="qrMain">QR코드 발급</a> 
         <a href="mapMain">지도</a>
         <a href="lost">유실물 종합안내</a>
         <a href="contact">문의사항</a>

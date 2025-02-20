@@ -73,11 +73,13 @@ hAddr {
 		<a href="qr">QR코드 발급</a> <a href="mapMain">지도</a> <a href="lost">유실물
 			종합안내</a> <a href="contact">문의사항</a>
 	</div>
-	<h2>어디서 잃어버렸나요?</h2>
+	<h2>어디에서 잃어버렸나요?</h2>
 
 	<form action="submitAddress">
 		<input type="text" id="roadAddress" name="roadAddress"
-			placeholder="도로명 주소"> <input type="text" id="jibunAddress"
+			placeholder="도로명 주소" readonly="readonly">
+		<input type="text" id="PRDT_NM" name="PRDT_NM" placeholder="물품명 ex)지갑">
+		<input type="text" id="jibunAddress"
 			name="jibunAddress" placeholder="지번 주소" style="display: none;">
 		<input type="text" id="pageNo" name="pageNo" value="1"
 			style="display: none;">
@@ -88,10 +90,11 @@ hAddr {
 	<div class="map_wrap">
 		<div id="map"
 			style="width: 750px; height: 700px; position: relative; overflow: hidden;"></div>
-		<div class="hAddr">
+ 		<div class="hAddr" style="display: none">
 			<span class="title">지도중심기준 행정동 주소정보</span> <span id="centerAddr"></span>
 		</div>
-	</div>
+	
+ 		</div>
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=73f10e0ecb2825848d7a1578ec6ca978&libraries=services,clusterer,drawing"></script>

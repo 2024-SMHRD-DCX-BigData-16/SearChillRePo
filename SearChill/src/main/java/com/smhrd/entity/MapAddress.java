@@ -15,5 +15,5 @@ public class MapAddress {
 
 	private String roadAddress;
 	private String jibunAddress;
-	
+	private String PRDT_NM;
 }
