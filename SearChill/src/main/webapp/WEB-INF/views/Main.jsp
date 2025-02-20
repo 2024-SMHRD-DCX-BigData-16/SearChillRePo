@@ -11,13 +11,44 @@
 		<title>SearChill Main</title>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="resources/css/mainset.css" /> 
+
+      <!--   .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70vh;
+        }
+
+        video {
+            width: 70%;
+            height: 100%;
+            object-fit: cover;
+        } -->
+		</style>
 				<!-- Scripts -->
 	</head>
 	<body>
 	
-	<button onclick="location.href='mapMain'">지도</button>
-	
-	
+	<div class="header">
+        <div></div>
+        <div class="main-link-container">
+            <h2 class="main-link"><a href="Main">Searchill</a></h2>
+        </div>
+        <h2 class="login-link"><a href="Login"><b>로그인</b></a></h2>
+    </div>
+
+    <div class="menu">
+        <a href="qr">QR코드 발급</a> 
+        <a href="mapMain">지도</a>
+        <a href="lost">유실물 종합안내</a>
+        <a href="contact">문의사항</a>
+    </div>
+
+    <!-- <div class="video-container">
+        <video src="/스마트폰 캐릭터 애니메이션을 사용하는 사람_preview.mp4" controls autoplay loop muted></video>
+    </div> -->
 	
 	
 	

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.main-link {
+    /* 濡쒓퀬 */
+    font-size: 24px;
+    text-decoration: none;
+    color: #000;
+}
+
+.main-link-container {
+    /* 濡쒓퀬 */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-link {
+    /* 濡쒓렇�씤 */
+    padding: 10px 20px;
+    /* background-color: #007bff; */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    /* a�깭洹� 諛묒쨪 �젣嫄� */
+    color: #000;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    /* background-color: #f8f9fa; */
+    border: 1px solid black;
+    width: 100%;
+}
+
+.menu a {
+    padding: 10px 20px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
