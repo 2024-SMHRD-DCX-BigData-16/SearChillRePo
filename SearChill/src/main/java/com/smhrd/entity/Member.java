@@ -17,10 +17,14 @@ import lombok.ToString;
 public class Member {
 
 	@NonNull
-	private String email;
+	private String mem_id;
 	@NonNull
-	private String pw;
-	private String tel;
-	private String address;
+	private String mem_pw;
+	@NonNull
+	private String mem_phone;
+	private String mem_email;
+	@NonNull
+	private String mem_name;
+	private String mem_phone_open ="x";
 	
 }

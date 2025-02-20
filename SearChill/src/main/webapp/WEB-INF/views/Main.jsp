@@ -36,7 +36,7 @@
         <div class="main-link-container">
             <h2 class="main-link"><a href="Main">Searchill</a></h2>
         </div>
-        <h2 class="login-link"><a href="Login"><b>로그인</b></a></h2>
+        <h2 class="login-link"><a href="memberMain"><b>로그인</b></a></h2>
     </div>
 
     <div class="menu">
