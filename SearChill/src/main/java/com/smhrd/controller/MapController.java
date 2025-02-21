@@ -26,6 +26,11 @@ public class MapController {
 	public String main() {
 		return "Main";
 	}
+	
+	@RequestMapping("goMain")
+	public String goMain() {
+		return "Main";
+	}
 
 	@RequestMapping("/mapMain")
 	public String mapMain() {

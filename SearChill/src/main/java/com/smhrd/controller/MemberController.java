@@ -26,6 +26,16 @@ public class MemberController {
 		return "MemberMain";
 	}
 
+	@RequestMapping("/phoneCheck")
+	public String phoneCheck() {
+		return "PhoneCheck";
+	}
+	
+	@RequestMapping("/qrScan/phoneCheck")
+	public String phoneCheckScan() {
+		return "PhoneCheck";
+	}
+	
 	@PostMapping("/memberInsert")
 	public String memberInsert(Member member, Model model) {
 		if (member.getMem_phone_open() == null || member.getMem_phone_open().isEmpty()) {
@@ -65,6 +75,8 @@ public class MemberController {
 
 	}
 
+	
+	
 	@PostMapping("/memberLogin")
 	public String memberJoin(Member member, Model model, HttpSession session) {
 
@@ -72,12 +84,12 @@ public class MemberController {
 		if (loginMember == null) {
 			// 로그인 실패
 			System.out.println("로그인에 실패했습니다 id와 pw를 확인해주세요");
-			session.removeAttribute("member");
+			session.removeAttribute("loginuser");
 			return "MemberMain";
 		} else {
 			// 로그인 성공
 			session.setAttribute("loginuser", loginMember);
-
+			
 			return "MemberMain";
 		}
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.mapper.LostitemFormMapper">
+
+    <insert id="insertLostitem" parameterType="com.smhrd.entity.Lostitem">
+        INSERT INTO tb_object (object_name, object_scan_loc, object_photo, object_keeping_place, object_keeping_place_info, mem_id, object_scan_loc_lat, object_scan_loc_lon, object_keeping_place_lat, object_keeping_place_lon, notice_msg) 
+VALUES (#{object_name}, #{object_scan_loc}, #{object_photo}, #{object_keeping_place}, #{object_keeping_place_info}, #{mem_id}, #{object_scan_loc_lat}, #{object_scan_loc_lon}, #{object_keeping_place_lat}, #{object_keeping_place_lon}, #{notice_msg})
+    </insert>
+
+
+<!--     <select id="getLostitemById" parameterType="String" resultType="com.smhrd.entity.Lostitem">
+        SELECT * FROM tb_object WHERE 
+    </select>
+ -->
+</mapper>

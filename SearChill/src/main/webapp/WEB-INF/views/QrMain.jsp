@@ -9,18 +9,16 @@
 </head>
 <body>
 
-    <h1>QR 코드 생성기</h1>
-
-    <%-- form 태그 제거, div 태그로 대체 --%>
-    <div>
+    
+<c:if test = "${loginuser != null}">				
+        <div style="display: none;">
         <label for="url">URL 입력:</label>
-        <input type="text" id="url" name="url" value="https://www.example.com" />
+        <input type="text" id="url" name="url" value="http://localhost:8081/controller/qrScan/?mem_id=${loginuser.mem_id }" />
         <br />
-        <%-- button type="button" 으로 변경, onclick 이벤트 핸들러 연결 --%>
-        <button type="button" onclick="displayQrCode()">QR 코드 생성</button>
     </div>
+</c:if>
 
-    <%-- QR 코드 이미지를 표시할 영역 (초기에는 숨김) --%>
+    <%-- QR 코드 이미지를 표시할 영역 --%>
     <div id="qrCodeArea" style="display:none;">
         <h2>QR 코드 이미지</h2>
         <img id="qrImage" src="" alt="QR 코드 이미지" /> <%-- src 속성 초기화 --%>
@@ -40,10 +38,12 @@ function displayQrCode() {
         document.getElementById("qrCodeArea").style.display = "block";
 
     } else {
-        alert("URL을 입력해주세요.");
+        alert("QR코드 오류");
     }
     return false; // 폼 기본 제출 방지 (필요한 경우, 현재는 form 태그 제거했으므로 불필요)
 }
+
+displayQrCode()
 </script>
 
 </body>

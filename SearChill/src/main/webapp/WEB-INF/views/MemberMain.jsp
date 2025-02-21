@@ -13,16 +13,18 @@
 </head>
 <body>
 
+<a href="goMain">main</a>
+
+
 	<div id="wrapper">
 
 		<!-- Header -->
-		<header id="header" class="alt"> <a	class="logo"><strong>SearChill</strong></a> <nav>
 		<c:if test="${loginuser == null}">
-			<a href="#menu">로그인</a>
+			<h2 class="login-link"><a href="memberMain"><b>로그인</b></a></h2>
 		</c:if> <c:if test="${loginuser != null}">
-			<a href="updateUser">회원정보 수정</a>
-			<a href="logout">로그아웃</a>
-		</c:if></header>
+			<h2 class="login-link"><a href="updateUser">회원정보 수정</a></h2>
+			<h2 class="login-link"><a href="logout"><b>로그아웃</b></a></h2>
+		</c:if>
 
 		<nav id="menu">
 		<ul class="links">

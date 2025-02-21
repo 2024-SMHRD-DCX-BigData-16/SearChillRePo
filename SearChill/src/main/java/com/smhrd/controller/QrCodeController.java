@@ -1,11 +1,12 @@
 package com.smhrd.controller;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.google.zxing.BarcodeFormat;
@@ -13,21 +14,31 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 @Controller
-public class QrController {
+public class QrCodeController {
 
+
+	
+	@GetMapping("/qrScan")
+	public String qrScan() {
+//		@RequestParam String mem_id
+		return "QrScan";
+	}
+	
+	@GetMapping("/qrScan/goMain")
+	public String qrScanScan() {
+//		@RequestParam String mem_id
+		return "Main";
+	}
+
+	
     @GetMapping("/qrMain")
     public String qrMain() {
         return "QrMain";
     }
 
-    @RequestMapping("/lostItemForm")
-    public String lostItemForm() {
-        return "LostItemForm";
-    }
+
     
     @GetMapping("/qrMake")
     public Object createQr(@RequestParam String url) throws WriterException, IOException {
@@ -44,7 +55,20 @@ public class QrController {
     }
     
     
-
-
+	/*
+	 * @GetMapping("/qrIdxSelect") public @ResponseBody String qrIdx(String mem_id){
+	 * 
+	 * QrCode qrCode = qrCodeMapper.qrIdxSelect(mem_id); String qrIdx =
+	 * qrCode.getQr_idx();
+	 * 
+	 * return qrIdx; }
+	 */
+	/*
+	 * @GetMapping("/qrInsert") public String qrSave(QrCode qrCode) {
+	 * 
+	 * int result = qrCodeMapper.qrInsert(qrCode);
+	 * 
+	 * return "Main"; }
+	 */    
 
 }

@@ -57,17 +57,7 @@ hAddr {
 
 </head>
 <body>
-	<div class="header">
-		<div></div>
-		<div class="main-link-container">
-			<h2 class="main-link">
-				<a href="Main">Searchill</a>
-			</h2>
-		</div>
-		<h2 class="login-link">
-			<a href="Login"><b>로그인</b></a>
-		</h2>
-	</div>
+
 
 	<div class="menu">
 		<a href="qr">QR코드 발급</a> <a href="mapMain">지도</a> <a href="lost">유실물
@@ -89,12 +79,12 @@ hAddr {
 
 	<div class="map_wrap">
 		<div id="map"
-			style="width: 750px; height: 700px; position: relative; overflow: hidden;"></div>
+			style="width: 750px; height: 700px; position: relative; overflow: hidden;">
+		</div>
  		<div class="hAddr" style="display: none">
 			<span class="title">지도중심기준 행정동 주소정보</span> <span id="centerAddr"></span>
 		</div>
-	
- 		</div>
+ 	</div>
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=73f10e0ecb2825848d7a1578ec6ca978&libraries=services,clusterer,drawing"></script>

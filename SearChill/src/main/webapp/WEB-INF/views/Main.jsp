@@ -34,15 +34,21 @@
 	<div class="header">
         <div></div>
         <div class="main-link-container">
-            <h2 class="main-link"><a href="Main">Searchill</a></h2>
+            <h2 class="main-link"><a href="goMain">Searchill</a></h2>
         </div>
-        <h2 class="login-link"><a href="memberMain"><b>로그인</b></a></h2>
-    </div>
+        
+	<c:if test="${loginuser == null}">
+			<h2 class="login-link"><a href="memberMain"><b>로그인</b></a></h2>
+		</c:if> <c:if test="${loginuser != null}">
+			<h2 class="login-link"><a href="logout"><b>로그아웃</b></a></h2>
+		</c:if> 
+		   </div>
 
     <div class="menu">
         <a href="qrMain">QR코드 발급</a> 
-        <a href="mapMain">지도</a>
         <a href="lostItemForm">테스트용 lostItemForm</a>
+        <a href="qrScan">테스트용 qrScan</a>
+        <a href="mapMain">지도</a>
         <a href="lost">유실물 종합안내</a>
         <a href="contact">문의사항</a>
     </div>

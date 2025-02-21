@@ -1,18 +1,14 @@
 package com.smhrd.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
-@ToString
+@Data
 @RequiredArgsConstructor
 public class Member {
 
@@ -25,6 +21,6 @@ public class Member {
 	private String mem_email;
 	@NonNull
 	private String mem_name;
-	private String mem_phone_open ="x";
+	private String mem_phone_open;
 	
 }
