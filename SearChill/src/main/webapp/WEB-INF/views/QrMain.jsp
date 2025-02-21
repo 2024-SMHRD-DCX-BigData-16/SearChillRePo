@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<h1>qr조회</h1>
     
 <c:if test = "${loginuser != null}">				
         <div style="display: none;">

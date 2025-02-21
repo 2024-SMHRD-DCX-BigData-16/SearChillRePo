@@ -29,7 +29,7 @@ public class QrCodeController {
 	@GetMapping("/qrScan/goMain")
 	public String qrScanScan() {
 //		@RequestParam String mem_id
-		return "Main";
+		return "redirect:Main";
 	}
 
 	
@@ -55,20 +55,5 @@ public class QrCodeController {
     }
     
     
-	/*
-	 * @GetMapping("/qrIdxSelect") public @ResponseBody String qrIdx(String mem_id){
-	 * 
-	 * QrCode qrCode = qrCodeMapper.qrIdxSelect(mem_id); String qrIdx =
-	 * qrCode.getQr_idx();
-	 * 
-	 * return qrIdx; }
-	 */
-	/*
-	 * @GetMapping("/qrInsert") public String qrSave(QrCode qrCode) {
-	 * 
-	 * int result = qrCodeMapper.qrInsert(qrCode);
-	 * 
-	 * return "Main"; }
-	 */    
 
 }

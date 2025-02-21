@@ -56,8 +56,18 @@
 			placeholder="보관위도" value="0" readonly="readonly">
 	<input type="text" id="object_keeping_place_lon" name="object_keeping_place_lon"
 			placeholder="보관경도" value="180" readonly="readonly">
+	
+	
 	<c:if test="${not empty param.mem_id}">
-	<input type="text" id="mem_id" name="mem_id" value="<%= request.getParameter("mem_id") %>">
+	<% 
+	/* mem_id가 null 문자열로 들어가는 경우 admin으로 받음 */
+	String submitMem_id = request.getParameter("mem_id");
+	if(request.getParameter("mem_id").equals("null")){
+		submitMem_id = "admin";
+	}%>
+	<input type="text" id="mem_id" name="mem_id" 
+	value="<%= submitMem_id %>">
+	
 	</c:if>
 	
 	

@@ -36,6 +36,12 @@ public class MemberController {
 		return "PhoneCheck";
 	}
 	
+	@RequestMapping("/goJoinSuccess")
+	public String goJoinSuccess() {
+		return "JoinSuccess";
+	}
+
+	
 	@PostMapping("/memberInsert")
 	public String memberInsert(Member member, Model model) {
 		if (member.getMem_phone_open() == null || member.getMem_phone_open().isEmpty()) {
@@ -43,7 +49,7 @@ public class MemberController {
 		}
 
 		MemberMapper.memberInsert(member);
-		return "JoinSuccess";
+		return "redirect:/goJoinSuccess";
 	}
 
    @GetMapping("/logout")
@@ -59,6 +65,8 @@ public class MemberController {
 		return "UpdateMember";
 	}
 
+	
+	
 	@RequestMapping("/IDCheck")
 	public @ResponseBody boolean IDCheck(@RequestParam("inputID") String inputID) {
 		// 아이디 중복 여부 확인
@@ -109,16 +117,17 @@ public class MemberController {
 
 	    
 	    Member member = new Member(mem_id, mem_pw, mem_email, mem_name, mem_phone, mem_phone_open);
-
 	   
 	    int result = MemberMapper.memberUpdate(member);
 
 	    if (result > 0) {
 	        // 회원정보 수정 성공
 	        session.setAttribute("loginuser", member);
-	        return "MemberMain";  // 수정 후 메인 페이지로 리다이렉트
+	        System.out.println("회원정보 수정 성공");
+	        return "redirect:/memberMain";  // 수정 후 메인 페이지로 리다이렉트
 	    } else {
 	        // 회원정보 수정 실패
+	    	System.out.println("회원정보 수정 실패");
 	        return "UpdateMember";  // 수정 실패 시 수정 페이지로 리턴
 	    }
 	}

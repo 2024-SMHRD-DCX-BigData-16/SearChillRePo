@@ -1,5 +1,7 @@
 package com.smhrd.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.smhrd.entity.Lostitem;
@@ -9,7 +11,7 @@ public interface LostitemFormMapper {
 
     public int insertLostitem(Lostitem lostitem);
 
-    public Lostitem getLostitemById(String objectName);
+    public List<Lostitem> getLostitemIsNull();
 
     
     

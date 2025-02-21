@@ -9,12 +9,11 @@
 
 <style>
 map_wrap {
-    justify-content : center
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 350px;
+	justify-content: center top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 350px;
 }
 
 .title {
@@ -31,14 +30,6 @@ hAddr {
 	background: rgba(255, 255, 255, 0.8);
 	z-index: 1;
 	padding: 5px;
-	/* position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 2px;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.8);
-    z-index: 1;
-    padding:  */
 }
 
 #centerAddr {
@@ -54,6 +45,12 @@ hAddr {
 	white-space: nowrap;
 }
 </style>
+<script src="resources/js/jquery.min.js"></script>
+<script src="resources/js/jquery.scrolly.min.js"></script>
+<script src="resources/js/jquery.scrollex.min.js"></script>
+<script src="resources/js/skel.min.js"></script>
+<script src="resources/js/util.js"></script>
+
 
 </head>
 <body>
@@ -63,16 +60,19 @@ hAddr {
 		<a href="qr">QR코드 발급</a> <a href="mapMain">지도</a> <a href="lost">유실물
 			종합안내</a> <a href="contact">문의사항</a>
 	</div>
+
+	<a href="lostitemList">테스트용 lostitemList</a>
+
+
 	<h2>어디에서 잃어버렸나요?</h2>
 
 	<form action="submitAddress">
 		<input type="text" id="roadAddress" name="roadAddress"
-			placeholder="도로명 주소" readonly="readonly">
-		<input type="text" id="PRDT_NM" name="PRDT_NM" placeholder="물품명 ex)지갑">
-		<input type="text" id="jibunAddress"
-			name="jibunAddress" placeholder="지번 주소" style="display: none;">
-		<input type="text" id="pageNo" name="pageNo" value="1"
-			style="display: none;">
+			placeholder="도로명 주소" readonly="readonly"> <input type="text"
+			id="PRDT_NM" name="PRDT_NM" placeholder="물품명 ex)지갑"> <input
+			type="text" id="jibunAddress" name="jibunAddress" placeholder="지번 주소"
+			style="display: none;"> <input type="text" id="pageNo"
+			name="pageNo" value="1" style="display: none;">
 		<button type="submit">유실물 조회</button>
 	</form>
 
@@ -81,10 +81,10 @@ hAddr {
 		<div id="map"
 			style="width: 750px; height: 700px; position: relative; overflow: hidden;">
 		</div>
- 		<div class="hAddr" style="display: none">
+		<div class="hAddr" style="display: none">
 			<span class="title">지도중심기준 행정동 주소정보</span> <span id="centerAddr"></span>
 		</div>
- 	</div>
+	</div>
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=73f10e0ecb2825848d7a1578ec6ca978&libraries=services,clusterer,drawing"></script>
@@ -179,7 +179,75 @@ hAddr {
 		var zoomControl = new kakao.maps.ZoomControl();
 		//지도의 우측에 확대 축소 컨트롤을 추가한다
 		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-	</script>
+		
+		
+	 
+	// 마커 추가
+    var markerData = null; // lostitemList를 저장할 변수
+    var currentInfowindow = null; // 현재 열려 있는 인포윈도우를 저장할 변수
 
+
+ var lostItemClusterer = new kakao.maps.MarkerClusterer({ map: map });
+
+ $.ajax({
+     url: "lostitemList",
+     type: "get",
+     success: (res) => {
+         markerData = res;
+
+         // 유실물 마커 생성 및 클러스터러에 추가
+         var lostItemMarkers = $(markerData).map(function(i, item) { // jQuery.map() 사용
+             var markerLat = parseFloat(item.object_keeping_place_lat);
+             var markerLon = parseFloat(item.object_keeping_place_lon);
+
+             if (!isNaN(markerLat) && !isNaN(markerLon) && markerLon !== 180) {
+                 var markerPosition = new kakao.maps.LatLng(markerLat, markerLon);
+
+                 var marker = new kakao.maps.Marker({
+                     position: markerPosition,
+                 });
+
+                 var infowindow = new kakao.maps.InfoWindow({
+                     content: '<div style="padding:5px;font-size:12px; width:200px; height:150px; ">' + 
+                     '<strong>물품명:</strong> ' + (item.object_name || "이름 없음") + '<br>' +
+                     '<strong>보관 장소:</strong> ' + (item.object_keeping_place || "정보 없음") + '<br>' +
+                     '<strong>보관 장소 설명:</strong> ' + (item.object_keeping_place_info || "정보 없음") + '<br>' +
+                     '<strong>습득 일시:</strong> ' + (item.object_date || "정보 없음") + '<br>' +
+                     '<strong>사진:</strong> ' + (item.object_photo || "사진 없음") + '<br>' +
+                     
+                     // 사진 첨부되면 바꿀 것
+/*                   '<strong>사진:</strong> ' + (item.object_photo ? '<img src=/resources/objectImages/"' + item.object_photo + '" width="50">' : "사진 없음") + '<br>' + */
+                     '<strong>참고 메시지:</strong> ' + (item.notice_msg || "없음") +
+                  '</div>'
+                 });
+
+                 kakao.maps.event.addListener(marker, 'click', function() {
+                     if (currentInfowindow && currentInfowindow.getMap()) {
+                         currentInfowindow.close();
+                         currentInfowindow = null;
+                     } else {
+                         infowindow.open(map, marker);
+                         currentInfowindow = infowindow;
+                     }
+                 });
+                 return marker; 
+             } else {
+                 return null; // 좌표가 유효하지 않은 경우 null 반환 (마커 생성 X)
+             }
+         }).get(); // .get() 을 사용하여 jQuery 객체를 배열로 변환
+
+         // 클러스터러에 마커 배열 추가 (addMarkers 사용)
+         lostItemClusterer.addMarkers(lostItemMarkers);
+
+
+     },
+     error: (err) => {
+         alert(err);
+     },
+ });
+    
+    
+
+	</script>
 </body>
 </html>

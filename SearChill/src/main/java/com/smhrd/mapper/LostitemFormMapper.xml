@@ -8,8 +8,8 @@ VALUES (#{object_name}, #{object_scan_loc}, #{object_photo}, #{object_keeping_pl
     </insert>
 
 
-<!--     <select id="getLostitemById" parameterType="String" resultType="com.smhrd.entity.Lostitem">
-        SELECT * FROM tb_object WHERE 
+ <select id="getLostitemIsNull" resultType="com.smhrd.entity.Lostitem">
+        SELECT * FROM tb_object WHERE mem_id is null
     </select>
- -->
+
 </mapper>

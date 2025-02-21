@@ -8,19 +8,15 @@
 </head>
 <body>
 
-
-http://localhost:8081/controller/qrScan/?mem_id=1
+<h1>qr스캔시 접속할 페이지</h1>
 
 <br>
 mem_id = <%= request.getParameter("mem_id") %>
 
 
-
-만들거
-id에 맞는 qr번호에 맞는 분실물 등록 사이트 ->LostItemForm 들어가는거
 <form action="lostItemForm">
 <input type="text" name="mem_id" value="<%= request.getParameter("mem_id") %>" >
-<input type="submit" value="LostItemFrom">
+<input type="submit" value="LostItemFrom 분실물 등록 페이지">
 </form>
 
 
@@ -28,7 +24,7 @@ id에 맞는 qr번호에 맞는 분실물 등록 사이트 ->LostItemForm 들어
  -->
 <br>
  
-연락처 확인 버튼
+연락처 확인 버튼(미완)
 <a href="phoneCheck">phoneCheck</a>
  
 </body>

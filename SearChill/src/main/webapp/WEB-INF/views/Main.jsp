@@ -45,7 +45,14 @@
 		   </div>
 
     <div class="menu">
-        <a href="qrMain">QR코드 발급</a> 
+    
+    	<c:if test="${loginuser == null}">
+			<a href="memberMain">QR코드 발급</a>
+		</c:if> 
+		<c:if test="${loginuser != null}">
+        	<a href="qrMain">QR코드 발급</a> 
+		</c:if>
+   
         <a href="lostItemForm">테스트용 lostItemForm</a>
         <a href="qrScan">테스트용 qrScan</a>
         <a href="mapMain">지도</a>
