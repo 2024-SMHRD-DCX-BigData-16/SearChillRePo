@@ -25,22 +25,16 @@ public class MemberController {
 	public String goMain() {
 		return "MemberMain";
 	}
-
-	@RequestMapping("/phoneCheck")
-	public String phoneCheck() {
-		return "PhoneCheck";
-	}
-	
-	@RequestMapping("/qrScan/phoneCheck")
-	public String phoneCheckScan() {
-		return "PhoneCheck";
-	}
 	
 	@RequestMapping("/goJoinSuccess")
 	public String goJoinSuccess() {
 		return "JoinSuccess";
 	}
 
+	@RequestMapping("/goJoin")
+	public String goJoin() {
+		return "Join";
+	}
 	
 	@PostMapping("/memberInsert")
 	public String memberInsert(Member member, Model model) {
@@ -52,6 +46,11 @@ public class MemberController {
 		return "redirect:/goJoinSuccess";
 	}
 
+	@RequestMapping("/lostGuide")
+	public String goLostGuide() {
+		return "LostGuide";
+	}
+	
    @GetMapping("/logout")
    public String logout(HttpSession session) {
 	  //session.invalidate();
@@ -65,6 +64,38 @@ public class MemberController {
 		return "UpdateMember";
 	}
 
+
+	@RequestMapping("/phoneCheck")
+	public String phoneCheck(@RequestParam("mem_id") String mem_id, Model model) {
+		
+		//mem_id로 조회해서 공개여부가 1이면 연락처 모델에 저장 아니면 비공개입니다
+		String phone = MemberMapper.phoneCheck(mem_id);
+		if(phone != null) {
+			model.addAttribute("phone", phone);
+			
+			System.out.println(phone);
+		}else {
+			System.out.println(phone);
+			model.addAttribute("phone", "비공개 상태입니다.");
+		}
+		return "PhoneCheck";
+	}
+	
+	@RequestMapping("/qrScan/phoneCheck")
+	public String phoneCheckScan(@RequestParam("mem_id") String mem_id, Model model) {
+		
+		//mem_id로 조회해서 공개여부가 1이면 연락처 모델에 저장 아니면 비공개입니다
+		String phone = MemberMapper.phoneCheck(mem_id);
+		if(phone != null) {
+			model.addAttribute("phone", phone);
+			
+			System.out.println(phone);
+		}else {
+			System.out.println(phone);
+			model.addAttribute("phone", "비공개 상태입니다.");
+		}
+		return "PhoneCheck";
+	}
 	
 	
 	@RequestMapping("/IDCheck")

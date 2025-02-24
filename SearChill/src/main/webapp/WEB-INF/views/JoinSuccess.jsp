@@ -11,7 +11,7 @@
 				<!-- Menu -->
 					<nav id="Update">	
 						<ul class="actions vertical">
-							<li><h1>환영합니다!</h1></li>
+							<li><h1>${loginuser.mem_id}환영합니다!</h1></li>
 							<li>회원가입을 축하합니다.</li>
 							
 							<li><button onclick='location.href="memberMain"'>login go</button></li>

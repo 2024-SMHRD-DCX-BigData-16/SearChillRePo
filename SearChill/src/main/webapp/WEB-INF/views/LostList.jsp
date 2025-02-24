@@ -31,7 +31,7 @@
     }
 }
 
-/* ** 추가: 현재 페이지 버튼 스타일 ** */
+/*  추가: 현재 페이지 버튼 스타일  */
 .current-page {
     background-color: #3498db; /* 파란색 배경 */
     color: white !important; /* 흰색 글자, important로 기존 스타일보다 우선 적용 */
@@ -50,6 +50,28 @@
 <div id="top"></div>
 	<h1>습득물 조회 결과</h1>
 
+
+
+	<div id="loading"></div>
+
+	<!-- 세부 정보 테이블 -->
+	<table id="detailTable" border="1px" style="display: none;">
+		<thead>
+			<tr>
+				<th>이미지</th>
+				<th>물품명</th>
+				<th>보관 장소</th>
+				<th>습득 날짜
+					<button onclick="sortTableByDate()">정렬</button>
+				</th>
+				<th>전화번호</th>
+			</tr>
+		</thead>
+		<tbody id="detailBody"></tbody>
+	</table>
+
+<!-- 페이지 -->
+<div>
 <%
     String currentPage = request.getParameter("pageNo"); // 현재 페이지 번호 파라미터로 받기
     if (currentPage == null || currentPage.isEmpty()) {
@@ -75,23 +97,7 @@
 
 </div>
 
-	<div id="loading"></div>
-
-	<!-- 세부 정보 테이블 -->
-	<table id="detailTable" border="1px" style="display: none;">
-		<thead>
-			<tr>
-				<th>이미지</th>
-				<th>물품명</th>
-				<th>보관 장소</th>
-				<th>습득 날짜
-					<button onclick="sortTableByDate()">정렬</button>
-				</th>
-				<th>전화번호</th>
-			</tr>
-		</thead>
-		<tbody id="detailBody"></tbody>
-	</table>
+</div>
 
 
 	<h3 id="lostNotice" style="display: none;">분실하신 분께서는 본인을 증명할 수 있는
@@ -320,7 +326,7 @@
 				if (item.fdFilePathImg) {
 					var img = document.createElement("img");
 					img.src = item.fdFilePathImg ? item.fdFilePathImg
-							: "/resources/images/no_image.png"; // 대체 이미지 경로 수정
+							: "./resources/images/no_image.png"; // 대체 이미지 경로 수정
 					img.alt = "이미지 없음";
 					img.width = 100;
 					img.height = 100;

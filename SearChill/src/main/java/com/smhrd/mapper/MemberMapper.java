@@ -17,6 +17,8 @@ public interface MemberMapper {
 
 	public Member IDCheck(String inputID);
 
+	public String phoneCheck(String mem_id);
+
 
 	
 }

@@ -33,10 +33,10 @@
 
 
 					<li><label>연락처 공개 여부:</label><br> <input type="radio"
-						id="open" name="mem_phone_open" value="O"
-						${loginuser.mem_phone_open == 'O' ? 'checked' : ''}> 공개 <input
-						type="radio" id="close" name="mem_phone_open" value="X"
-						${loginuser.mem_phone_open == 'X' ? 'checked' : ''}> 비공개</li>
+						id="open" name="mem_phone_open" value="1"
+						${loginuser.mem_phone_open == '1' ? 'checked' : ''}> 공개 <input
+						type="radio" id="close" name="mem_phone_open" value="0"
+						${loginuser.mem_phone_open == '0' ? 'checked' : ''}> 비공개</li>
 
 					<!-- 수정 버튼 -->
 					<li><input type="submit" value="회원정보 수정" class="button fit"></li>

@@ -13,6 +13,8 @@ public interface LostitemFormMapper {
 
     public List<Lostitem> getLostitemIsNull();
 
+	public List<Lostitem> myLostItemNotice(String mem_id);
+
     
     
 }

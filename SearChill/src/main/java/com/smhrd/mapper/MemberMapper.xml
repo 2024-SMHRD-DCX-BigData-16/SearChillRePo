@@ -25,6 +25,10 @@
 		
 	</select>
 
+	<select id="phoneCheck" resultType="String">
+		select mem_phone from tb_member where mem_id = #{mem_id} and mem_phone_open = 1
+	</select>
+
 	<update id="memberUpdate"
 		parameterType="com.smhrd.entity.Member">
 		update tb_member set mem_pw = #{mem_pw}, mem_name =

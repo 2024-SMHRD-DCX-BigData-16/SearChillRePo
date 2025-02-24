@@ -20,7 +20,7 @@ map_wrap {
 	font-weight: bold;
 	display: block;
 }
-
+/* 
 hAddr {
 	position: absolute;
 	left: 10px;
@@ -44,6 +44,7 @@ hAddr {
 	overflow: hidden;
 	white-space: nowrap;
 }
+ */
 </style>
 <script src="resources/js/jquery.min.js"></script>
 <script src="resources/js/jquery.scrolly.min.js"></script>
@@ -55,31 +56,38 @@ hAddr {
 </head>
 <body>
 
-
-	<div class="menu">
-		<a href="qr">QR코드 발급</a> <a href="mapMain">지도</a> <a href="lost">유실물
-			종합안내</a> <a href="contact">문의사항</a>
-	</div>
-
-	<a href="lostitemList">테스트용 lostitemList</a>
-
-
 	<h2>어디에서 잃어버렸나요?</h2>
 
 	<form action="submitAddress">
-		<input type="text" id="roadAddress" name="roadAddress"
-			placeholder="도로명 주소" readonly="readonly">
-			 <input type="text"
-			id="PRDT_NM" name="PRDT_NM" placeholder="물품명 ex)지갑">
-			 <input
-			type="text" id="jibunAddress" name="jibunAddress" placeholder="지번 주소"
-			style="display: none;"> <input type="text" id="pageNo"
-			name="pageNo" value="1" style="display: none;">
-		<button type="submit">인근 분실물 센터 조회</button>
+		<table>
+			<tr>
+				<td>잃어버린 위치</td>
+				<td><input type="text" id="roadAddress" name="roadAddress"
+					placeholder="도로명 주소" readonly="readonly"></td>
+			</tr>
+			<tr>
+				<td>물품명</td>
+				<td><input type="text" id="PRDT_NM" name="PRDT_NM"
+					placeholder="ex)지갑"></td>
+			</tr>
+			<tr>
+			<td colspan="2" align="center">
+			<button type="submit" >인근 분실물 센터 조회</button>
+			</td>
+			</tr>
+
+
+		</table>
+
+
+		<input type="text" id="jibunAddress" name="jibunAddress"
+			placeholder="지번 주소" style="display: none;"> <input
+			type="text" id="pageNo" name="pageNo" value="1"
+			style="display: none;">
 	</form>
 
 	<div>한 달 이내 등록된 분실물 마커</div>
-	
+
 	<div class="map_wrap">
 		<div id="map"
 			style="width: 750px; height: 700px; position: relative; overflow: hidden;">
@@ -211,15 +219,16 @@ hAddr {
                  });
 
                  var infowindow = new kakao.maps.InfoWindow({
-                     content: '<div style="padding:5px;font-size:12px; width:200px; height:150px; ">' + 
+                     content: '<div style="padding:5px;font-size:12px; width:200px; height:250px; ">' + 
                      '<strong>물품명:</strong> ' + (item.object_name || "이름 없음") + '<br>' +
                      '<strong>보관 장소:</strong> ' + (item.object_keeping_place || "정보 없음") + '<br>' +
                      '<strong>보관 장소 설명:</strong> ' + (item.object_keeping_place_info || "정보 없음") + '<br>' +
                      '<strong>습득 일시:</strong> ' + (item.object_date || "정보 없음") + '<br>' +
-                     '<strong>사진:</strong> ' + (item.object_photo || "사진 없음") + '<br>' +
-                     
+/*                      '<strong>사진:</strong> ' + (item.object_photo || "사진 없음") + '<br>' +
+ */                     
                      // 사진 첨부되면 바꿀 것
-/*                   '<strong>사진:</strong> ' + (item.object_photo ? '<img src=/resources/objectImages/"' + item.object_photo + '" width="50">' : "사진 없음") + '<br>' + */
+                  '<strong>사진:</strong> ' + (item.object_photo ? '<img src="./resources/objectImages/' + item.object_photo + '" width="100" height="100" >  ' : "사진 없음") + '<br>' +
+
                      '<strong>참고 메시지:</strong> ' + (item.notice_msg || "없음") +
                   '</div>'
                  });

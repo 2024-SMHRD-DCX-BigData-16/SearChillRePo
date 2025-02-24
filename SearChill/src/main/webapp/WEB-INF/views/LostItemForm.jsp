@@ -9,11 +9,14 @@
 </head>
 <body>
 
-    <h2>분실물 등록</h2>
-	<div>입력 데이터는 분실자에게 전송됩니다.</div>
+    <h2>습득물 등록</h2>
+    📢 빠른 전달을 위해 최대한 정확한 정보를 입력해 주시면 더욱 도움이 됩니다!
+
+당신의 선한 행동이 큰 힘이 됩니다. 감사합니다! 😊✨
+    
 <!-- 자동등록 : 분실물 고유번호 object_idx, QR 고유번호 qr_idx, 분실물 스캔 날짜 object_date-->
 
-<form action="saveLostItem" method="post">
+<form action="saveLostItem" method="post" enctype="multipart/form-data">
 	
 	        <table border="1">
             <tr>
@@ -21,12 +24,13 @@
                 <td><input type="text" name="object_name" placeholder="ex)지갑, 에어팟"></td>
             </tr>
             <tr>
-                <td>분실물 사진 (URL):</td>
-                <td><input type="text" name="object_photo"></td>
+                <td>분실물 사진:</td>
+                <!-- <td><input type="text" name="object_photo"></td> -->
+                <td><input type="file" name="object_photo"></td>
             </tr>
             <tr>
-                <td>알림 메시지:</td>
-                <td><textarea name="notice_msg" placeholder="ex)OO경찰서에 맡겼습니다. 습득자 연락처:010-0000-0000"></textarea></td>
+                <td>메시지:</td>
+                <td><textarea name="notice_msg" placeholder="분실자에게 전할 메세지&#13;&#10;ex)OO경찰서에 맡겼습니다.&#13;&#10;습득자 연락처:010-0000-0000" style="height: 135px; width: 250px;"></textarea></td>
             </tr>   
             <tr>
             <td>보관 장소: </td>
@@ -45,7 +49,7 @@
              
         </table>
 		<!-- 숨길 인풋 태그 -->
-	<div >
+	<div style="display: none">
 	<input type="text" id="object_scan_loc_lat" name="object_scan_loc_lat"
 			placeholder="획득위도" value="0" readonly="readonly">
 	<input type="text" id="object_scan_loc_lon" name="object_scan_loc_lon"
@@ -73,14 +77,14 @@
 	
 	</div>
 		
-<input type="submit" value="위도경도주소 등록">
+<input type="submit" value="습득물 등록">
 </form>
 
 
 
 	<div class="map_wrap">
 		<div id="map"
-			style="width: 350px; height: 300px; position: relative; overflow: hidden;">
+			style="width: 400px; height: 300px; position: relative; overflow: hidden;">
 		</div>
  	</div>
 
