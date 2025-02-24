@@ -68,15 +68,18 @@ hAddr {
 
 	<form action="submitAddress">
 		<input type="text" id="roadAddress" name="roadAddress"
-			placeholder="도로명 주소" readonly="readonly"> <input type="text"
-			id="PRDT_NM" name="PRDT_NM" placeholder="물품명 ex)지갑"> <input
+			placeholder="도로명 주소" readonly="readonly">
+			 <input type="text"
+			id="PRDT_NM" name="PRDT_NM" placeholder="물품명 ex)지갑">
+			 <input
 			type="text" id="jibunAddress" name="jibunAddress" placeholder="지번 주소"
 			style="display: none;"> <input type="text" id="pageNo"
 			name="pageNo" value="1" style="display: none;">
-		<button type="submit">유실물 조회</button>
+		<button type="submit">인근 분실물 센터 조회</button>
 	</form>
 
-
+	<div>한 달 이내 등록된 분실물 마커</div>
+	
 	<div class="map_wrap">
 		<div id="map"
 			style="width: 750px; height: 700px; position: relative; overflow: hidden;">

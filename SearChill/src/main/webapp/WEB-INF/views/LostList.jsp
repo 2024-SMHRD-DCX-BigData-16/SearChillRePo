@@ -57,7 +57,7 @@
     }
 	for(int i =1; i<=10; i++){
 	%>
-    <a href="submitAddress?roadAddress=${sessionScope.mapAddress.roadAddress}&jibunAddress=${sessionScope.mapAddress.jibunAddress}&pageNo=<%=i %>"
+    <a href="submitAddress?roadAddress=${sessionScope.mapAddress.roadAddress}&jibunAddress=${sessionScope.mapAddress.jibunAddress}&PRDT_NM=${sessionScope.mapAddress.PRDT_NM}&pageNo=<%=i %>"
     <% if (String.valueOf(i).equals(currentPage)) { // 현재 페이지 번호와 버튼 번호 비교 %>
         class="current-page"  /* ** 현재 페이지 버튼에 current-page 클래스 추가 ** */
     <% } %>

@@ -98,7 +98,7 @@ public class MemberController {
 			// 로그인 성공
 			session.setAttribute("loginuser", loginMember);
 			
-			return "MemberMain";
+			return "Main";
 		}
 
 	}

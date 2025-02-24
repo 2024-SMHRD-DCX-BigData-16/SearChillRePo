@@ -61,8 +61,8 @@
 				<li><input type="text" id="inputEmail"
 					placeholder="Email을 입력하세요" name="mem_email"></li>
 				<li><label>연락처 공개 여부</label><br> <input type="radio"
-					name="mem_phone_open" value="O"> O <input type="radio"
-					name="mem_phone_open" value="X" checked> X</li>
+					name="mem_phone_open" value="1"> O <input type="radio"
+					name="mem_phone_open" value="0" checked> X</li>
 
 				<li><input type="submit" value="JoinUs" class="button fit"></li>
 			</form>
