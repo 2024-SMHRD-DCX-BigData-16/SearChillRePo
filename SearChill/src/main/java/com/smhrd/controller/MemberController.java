@@ -39,6 +39,20 @@ public class MemberController {
 	public String goJoin() {
 		return "Join";
 	}
+	@RequestMapping("/qrScan/memberMain")
+	public String goMainScan() {
+		return "redirect:/memberMain";
+	}
+	
+	@RequestMapping("/qrScan/goJoinSuccess")
+	public String goJoinSuccessScan() {
+		return "redirect:/goJoinSuccess";
+	}
+	
+	@RequestMapping("/qrScan/goJoin")
+	public String goJoinScan() {
+		return "redirect:/goJoin";
+	}
 	
 	@PostMapping("/memberInsert")
 	public String memberInsert(Member member, Model model) {
@@ -50,22 +64,31 @@ public class MemberController {
 		return "redirect:/goJoinSuccess";
 	}
 
-	@RequestMapping("/lostGuide")
-	public String goLostGuide() {
-		return "LostGuide";
-	}
-	
    @GetMapping("/logout")
    public String logout(HttpSession session) {
 	  //session.invalidate();
       session.removeAttribute("loginuser");
       return "redirect:/goMain";
    }
+
+   @GetMapping("/qrScan/logout")
+   public String logoutScan(HttpSession session) {
+	   //session.invalidate();
+	   session.removeAttribute("loginuser");
+	   return "redirect:/goMain";
+   }
 	
+   
 	@RequestMapping("/updateUser")
 	public String updateUser() {
 
 		return "UpdateMember";
+	}
+
+	@RequestMapping("/qrScan/updateUser")
+	public String updateUserScan() {
+		
+		return "redirect:/updateMember";
 	}
 
 
@@ -124,14 +147,18 @@ public class MemberController {
 	public String memberJoin(Member member, Model model, HttpSession session) {
 
 		Member loginMember = MemberMapper.memberSelectOne(member);
+		String alarmCheck = MemberMapper.alarmSelectOne(member.getMem_id());
+		
 		if (loginMember == null) {
 			// 로그인 실패
 			System.out.println("로그인에 실패했습니다 id와 pw를 확인해주세요");
 			session.removeAttribute("loginuser");
+			session.removeAttribute("alarmCheck");
 			return "MemberMain";
 		} else {
 			// 로그인 성공
 			session.setAttribute("loginuser", loginMember);
+			session.setAttribute("alarmCheck", alarmCheck);
 			
 			return "Main";
 		}

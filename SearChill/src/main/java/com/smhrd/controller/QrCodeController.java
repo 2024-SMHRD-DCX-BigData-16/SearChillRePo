@@ -48,6 +48,11 @@ public class QrCodeController {
         return "QrMain";
     }
 
+    @GetMapping("/qrScan/qrMain")
+    public String qrMainScan() {
+    	return "redirect:/qrMain";
+    }
+
 
     
     @GetMapping("/qrMake")

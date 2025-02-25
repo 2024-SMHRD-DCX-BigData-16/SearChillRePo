@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.smhrd.entity.Member;
 
+import lombok.NonNull;
+
 @Mapper
 public interface MemberMapper {
 
@@ -19,6 +21,11 @@ public interface MemberMapper {
 
 	public String phoneCheck(String mem_id);
 
+	public void updateMemberAlarm(String mem_id);
+	
+	
+	public void resetMemberAlarm(String mem_id);
 
+	public String alarmSelectOne(String mem_id);
 	
 }

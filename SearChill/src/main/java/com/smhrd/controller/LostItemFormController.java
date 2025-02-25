@@ -21,10 +21,14 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.entity.Lostitem;
 import com.smhrd.entity.Member;
 import com.smhrd.mapper.LostitemFormMapper;
+import com.smhrd.mapper.MemberMapper;
 
 @Controller
 public class LostItemFormController {
-    
+	
+	@Autowired
+	private MemberMapper memberMapper;
+
     @Autowired
     private LostitemFormMapper lostitemFormMapper;
         
@@ -126,8 +130,6 @@ public class LostItemFormController {
     }
     
     
-    // 스캔없이 페이지 접속하고 분실물 저장
-    // mem_id가 null값
     @PostMapping("/qrScan/saveLostItem")
     public String saveLostItemScan(Lostitem lostitem, HttpServletRequest request) {
     	
@@ -192,6 +194,9 @@ public class LostItemFormController {
     	int result = lostitemFormMapper.insertLostitem(lostitem);
     	
     	if(result != 0) {
+    		//
+			memberMapper.updateMemberAlarm(lostitem.getMem_id());
+
     		return "redirect:/goSaveLostItem"; // 성공 페이지
     	}else {
     		System.out.println("분실물 데이터 전송 실패");
@@ -200,24 +205,9 @@ public class LostItemFormController {
     	
     }
     
+   
     
-//    // 스캔으로 페이지 접속하고 분실물 저장
-//    @PostMapping("/qrScan/saveLostItem")
-//    public String saveLostItemScan(Lostitem lostitem) {
-//    	
-//    	System.out.println(lostitem.toString());
-//    	
-//    	int result = lostitemFormMapper.insertLostitem(lostitem);
-//    	
-//    	if(result != 0) {
-//    		return "redirect:/goSaveLostItem"; // 성공 페이지
-//    	}else {
-//    		return "redirect:/main"; // 실패    		
-//    	}
-//    	
-//    }
-    
-    @RequestMapping("myLostItemNotice")
+    @RequestMapping("/myLostItemNotice")
     public String myLostItemNotice(HttpSession session) {
     	Member loginuser = (Member) session.getAttribute("loginuser");
     	System.out.println(loginuser.toString());
@@ -228,14 +218,20 @@ public class LostItemFormController {
     		System.out.println(mem_id);
     		List<Lostitem> lostItemList = lostitemFormMapper.myLostItemNotice(mem_id);
     		session.setAttribute("myLostItemList", lostItemList);
+    		memberMapper.resetMemberAlarm(mem_id);
 		}
     	
     	return "MyLostItemNotice";
     }
+
+    @RequestMapping("/qrScan/myLostItemNotice")
+    public String myLostItemNoticeScan() {
+    	    	
+    	return "redirect:/myLostItemNotice";
+    }
     
     
     // select
-	//  조회
 	@RequestMapping("/lostitemList")
 	public @ResponseBody List<Lostitem> showMember(Model model) {
 		List<Lostitem> lostitemList = lostitemFormMapper.getLostitemIsNull();

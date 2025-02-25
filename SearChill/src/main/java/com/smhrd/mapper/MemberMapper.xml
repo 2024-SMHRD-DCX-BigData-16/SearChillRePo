@@ -36,6 +36,13 @@
 		where mem_id=#{mem_id}
 	</update>
 
+<update id="updateMemberAlarm"> update tb_member set mem_alarm = 1 where mem_id = #{mem_id} </update>
+<update id="resetMemberAlarm"> update tb_member set mem_alarm = 0 where mem_id = #{mem_id} </update>
+
+<select id="alarmSelectOne" resultType="String">
+select mem_alarm from tb_member where mem_id = #{mem_id}
+</select>
+
 </mapper>
 
 
