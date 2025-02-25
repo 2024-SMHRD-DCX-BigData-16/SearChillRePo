@@ -56,7 +56,7 @@ public class QrCodeController {
         int height = 130;
 
         // 색상 설정 (검정색 QR 코드, 배경색 투명)
-        MatrixToImageConfig config = new MatrixToImageConfig(0xFF000000, 0x00FFFFFF); // 검정색 전경, 흰색 배경 -> 배경색을 투명하게 0x00FFFFFF로 변경
+        MatrixToImageConfig config = new MatrixToImageConfig(0xFF000000, 0xFFFFFFFF); // 검정색 전경, 흰색 배경(0xFF000000, 0xFFFFFFFF) -> 배경색 투명 0x00FFFFFF
 
         // Quiet Zone 설정을 위한 Hint Map 생성
         Map<EncodeHintType, Object> hints = new HashMap<>();

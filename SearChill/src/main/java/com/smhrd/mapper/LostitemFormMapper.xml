@@ -18,4 +18,8 @@ VALUES (#{object_name}, #{object_scan_loc}, #{object_photo}, #{object_keeping_pl
         SELECT * FROM tb_object WHERE mem_id = #{mem_id}
     </select>
 
+<delete id="deleteLostItem">
+delete from tb_object where object_idx = #{object_idx}
+</delete>
+
 </mapper>

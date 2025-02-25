@@ -43,6 +43,13 @@ public class LostItemFormController {
     	return "SaveLostItem";
     }
     
+    @PostMapping("/deleteLostItem")
+    public String deleteLostItem(@RequestParam("object_idx") String object_idx) {
+    	
+    	lostitemFormMapper.deleteLostItem(object_idx);
+    	
+    	return "redirect:/myLostItemNotice";
+    }
     
     // 스캔없이 페이지 접속하고 분실물 저장
     // mem_id가 null값
@@ -112,15 +119,73 @@ public class LostItemFormController {
     	if(result != 0) {
     		return "redirect:/goSaveLostItem"; // 성공 페이지
     	}else {
+    		System.out.println("분실물 데이터 전송 실패");
     		return "redirect:/main"; // 실패    		
     	}
     	
     }
     
     
-    // 스캔으로 페이지 접속하고 분실물 저장
+    // 스캔없이 페이지 접속하고 분실물 저장
+    // mem_id가 null값
     @PostMapping("/qrScan/saveLostItem")
-    public String saveLostItemScan(Lostitem lostitem) {
+    public String saveLostItemScan(Lostitem lostitem, HttpServletRequest request) {
+    	
+    	// 파일 업로드를 위한 객체 : MultipartRequest
+    	MultipartRequest multi = null;
+    	
+    	// 1. 요청객체(request)
+    	// 2. 파일을 저장할 폴더의 경로 (절대 경로 대신 상대 경로로 접근)
+    	
+    	try {
+    		// 1. 요청객체(request)
+    		// 2. 파일을 저장할 폴더의 경로(String)
+    		String savePath = request.getRealPath("resources/objectImages");
+    		System.out.println(savePath);
+    		// 3. 허용 용량 크기(int)
+    		int maxSize = 1024*1024*10; // 10MB
+    		// 4. 파일 이름의 인코딩 방식
+    		String encoding = "UTF-8";
+    		// 5. 중복이름 제거(DefaultfileRenamePolicy)
+    		DefaultFileRenamePolicy dfrp = new DefaultFileRenamePolicy();
+    		multi = new MultipartRequest(request, savePath, maxSize, encoding, dfrp);
+    		
+    		// 파일이름 가져오기
+    		String object_photo = multi.getFilesystemName("object_photo");
+    		
+    		lostitem.setObject_photo(object_photo);
+    		
+    		// 나머지 설정
+    		String object_name = multi.getParameter("object_name");
+    		String object_scan_loc = multi.getParameter("object_scan_loc");
+    		String object_keeping_place = multi.getParameter("object_keeping_place");
+    		String object_keeping_place_info = multi.getParameter("object_keeping_place_info");
+    		String mem_id = multi.getParameter("mem_id");
+    		String object_scan_loc_lat = multi.getParameter("object_scan_loc_lat");
+    		String object_scan_loc_lon = multi.getParameter("object_scan_loc_lon");
+    		String object_keeping_place_lat = multi.getParameter("object_keeping_place_lat");
+    		String object_keeping_place_lon = multi.getParameter("object_keeping_place_lon");
+    		String notice_msg = multi.getParameter("notice_msg");
+    		
+    		lostitem.setObject_name(object_name);
+    		lostitem.setObject_scan_loc(object_scan_loc);
+    		lostitem.setObject_photo(object_photo);
+    		lostitem.setObject_keeping_place(object_keeping_place);
+    		lostitem.setObject_keeping_place_info(object_keeping_place_info);
+    		lostitem.setMem_id(mem_id);
+    		lostitem.setObject_scan_loc_lat(object_scan_loc_lat);
+    		lostitem.setObject_scan_loc_lon(object_scan_loc_lon);
+    		lostitem.setObject_keeping_place_lat(object_keeping_place_lat);
+    		lostitem.setObject_keeping_place_lon(object_keeping_place_lon);
+    		lostitem.setNotice_msg(notice_msg);
+    		
+    		
+    		System.out.println(lostitem.toString());
+    		
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    	}
     	
     	System.out.println(lostitem.toString());
     	
@@ -129,10 +194,28 @@ public class LostItemFormController {
     	if(result != 0) {
     		return "redirect:/goSaveLostItem"; // 성공 페이지
     	}else {
+    		System.out.println("분실물 데이터 전송 실패");
     		return "redirect:/main"; // 실패    		
     	}
     	
     }
+    
+    
+//    // 스캔으로 페이지 접속하고 분실물 저장
+//    @PostMapping("/qrScan/saveLostItem")
+//    public String saveLostItemScan(Lostitem lostitem) {
+//    	
+//    	System.out.println(lostitem.toString());
+//    	
+//    	int result = lostitemFormMapper.insertLostitem(lostitem);
+//    	
+//    	if(result != 0) {
+//    		return "redirect:/goSaveLostItem"; // 성공 페이지
+//    	}else {
+//    		return "redirect:/main"; // 실패    		
+//    	}
+//    	
+//    }
     
     @RequestMapping("myLostItemNotice")
     public String myLostItemNotice(HttpSession session) {

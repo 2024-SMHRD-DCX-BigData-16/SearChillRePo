@@ -15,6 +15,8 @@ public interface LostitemFormMapper {
 
 	public List<Lostitem> myLostItemNotice(String mem_id);
 
+	public void deleteLostItem(String object_idx);
+
     
     
 }

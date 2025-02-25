@@ -13,7 +13,7 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @Data
 public class Lostitem {
-	//<!-- 자동등록 : 분실물 고유번호 object_idx, QR 고유번호 qr_idx, 분실물 스캔 날짜 object_date-->
+	//<!-- 자동등록 : 분실물 고유번호 object_idx, 분실물 스캔 날짜 object_date-->
 
     private String object_idx; 
     private String object_name;
