@@ -6,38 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description"
-	content="Free HTML5 Website Template by FreeHTML5.co" />
-<meta name="keywords"
-	content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-<meta name="author" content="FreeHTML5.co" />
 
-<!-- 구글 폰트 로드 -->
-
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
-<!-- CSS 파일 로드 -->
-<link rel="stylesheet" href="../resources/css/animate.css">
-<link rel="stylesheet" href="../resources/css/icomoon.css">
-<link rel="stylesheet" href="../resources/css/bootstrap.css">
-<link rel="stylesheet" href="../resources/css/flexslider.css">
-<link rel="stylesheet" href="../resources/css/style.css">
-
-<!-- Modernizr JS 로드 -->
-<script src="../resources/js/modernizr-2.6.2.min.js"></script>
-
-<!-- CSS 파일 로드 -->
-<link rel="stylesheet" href="resources/css/animate.css">
-<link rel="stylesheet" href="resources/css/icomoon.css">
-<link rel="stylesheet" href="resources/css/bootstrap.css">
-<link rel="stylesheet" href="resources/css/flexslider.css">
-<link rel="stylesheet" href="resources/css/style.css">
-
-<!-- Modernizr JS 로드 -->
-<script src="resources/js/modernizr-2.6.2.min.js"></script>
-
+<%@ include file="/WEB-INF/views/qrcommon/qrhead.jsp" %>
 
 </head>
 <body>
@@ -45,61 +15,7 @@
 	<div id="fh5co-page">
 
 
-		<!-- 네비게이션 토글 버튼 -->
-		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-		<aside id="fh5co-aside" role="complementary"
-			class="border js-fullheight">
-			<!-- 로고 -->
-			<h1 id="fh5co-logo">
-				<a href="goMain"> <img
-					src="<c:url value='/resources/images/searchill.png' />"
-					alt="Searchill 로고" style="width: 250px; height: auto;">
-				</a>
-			</h1>
-
-			<!-- 메인 메뉴 -->
-			<nav id="fh5co-main-menu" role="navigation">
-				<ul>
-					<!-- <li class="fh5co-active"> -->
-					<li><a href="goMain" class="menu-btn">Home</a></li>
-
-					<!-- 회원 -->
-					<c:if test="${loginuser != null}">
-
-						<li><a href="qrMain" class="menu-btn">QR코드</a></li>
-						<li><a href="myLostItemNotice" class="menu-btn">내 분실물 습득
-								정보</a></li>
-					</c:if>
-					<!-- 비회원 -->
-					<c:if test="${loginuser == null}">
-						<li><a href="memberMain" class="menu-btn">QR코드</a></li>
-						<li><a href="memberMain" class="menu-btn">내 분실물 습득 정보</a></li>
-					</c:if>
-					<li><a href="goMain" class="menu-btn">습득물 신고</a></li>
-					<li><a href="mapMain" class="menu-btn">지도</a></li>
-
-				</ul>
-			</nav>
-			<!-- 푸터 -->
-			<div class="fh5co-footer">
-				<!-- 로그인 및 회원정보 수정 버튼 추가 -->
-				<div class="fh5co-login">
-					<c:if test="${loginuser != null}">
-						<p>
-							<a class="btn btn-primary" href="logout">Logout</a>
-						</p>
-					</c:if>
-				</div>
-				<!-- 저작권 및 디자인 정보 -->
-<!-- 				<p>
-					<small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
-							by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
-					</span> <span>Demo Images: <a href="https://unsplash.com/"
-							target="_blank">Unsplash</a></span></small>
-				</p> -->
-			</div>
-
-		</aside>
+		<%@ include file="/WEB-INF/views/qrcommon/qrfh5co-aside.jsp" %>
 
 
 		<div id="fh5co-main">
@@ -209,7 +125,6 @@
 
 						<!-- 내용끝 -->
 
-<br><br><br><br><br><br><br><br><br><br><br>
 
 					</div>
 				</div>
@@ -219,178 +134,12 @@
 		</div>
 	</div>
 
-	<!-- jQuery 로드 -->
-	<script src="../resources/js/jquery.min.js"></script>
-	<script src="../resources/js/jquery.scrolly.min.js"></script>
-	<script src="../resources/js/jquery.scrollex.min.js"></script>
-	<script src="../resources/js/skel.min.js"></script>
-	<script src="../resources/js/util.js"></script>
-	<!-- jQuery Easing 로드 -->
-	<script src="../resources/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap 로드 -->
-	<script src="../resources/js/bootstrap.min.js"></script>
-	<!-- Waypoints 로드 -->
-	<script src="../resources/js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider 로드 -->
-	<script src="../resources/js/jquery.flexslider-min.js"></script>
-
-	<!-- 메인 JS 로드 -->
-	<script src="../resources/js/main.js"></script>
-
-	<!-- jQuery 로드 -->
-	<script src="resources/js/jquery.min.js"></script>
-	<script src="resources/js/jquery.scrolly.min.js"></script>
-	<script src="resources/js/jquery.scrollex.min.js"></script>
-	<script src="resources/js/skel.min.js"></script>
-	<script src="resources/js/util.js"></script>
-	<!-- jQuery Easing 로드 -->
-	<script src="resources/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap 로드 -->
-	<script src="resources/js/bootstrap.min.js"></script>
-	<!-- Waypoints 로드 -->
-	<script src="resources/js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider 로드 -->
-	<script src="resources/js/jquery.flexslider-min.js"></script>
-
-	<!-- 메인 JS 로드 -->
-	<script src="resources/js/main.js"></script>
+<%@ include file="/WEB-INF/views/qrcommon/qrbodyScripts.jsp" %>
 
 						<script type="text/javascript"
 							src="//dapi.kakao.com/v2/maps/sdk.js?appkey=73f10e0ecb2825848d7a1578ec6ca978&libraries=services,clusterer,drawing"></script>
-						<script>
-							//input 태그에 정보를 담기 위한 태그 
-							var object_scan_loc_lat = document
-									.getElementById('object_scan_loc_lat');
-							var object_scan_loc_lon = document
-									.getElementById('object_scan_loc_lon');
-							var object_keeping_place_lat = document
-									.getElementById('object_keeping_place_lat');
-							var object_keeping_place_lon = document
-									.getElementById('object_keeping_place_lon');
-
-							var object_scan_loc = document
-									.getElementById('object_scan_loc');
-							var object_keeping_place = document
-									.getElementById('object_keeping_place');
-							var lat = null;
-							var lon = null;
-
-							// object_loc.value = 주소명;
-
-							var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-							mapOption = {
-								center : new kakao.maps.LatLng(37.566826,
-										126.9786567), // 지도의 중심좌표
-								level : 4
-							// 지도의 확대 레벨
-							};
-
-							//HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
-							if (navigator.geolocation) {
-								// GeoLocation을 이용해서 접속 위치를 얻어옵니다
-								navigator.geolocation
-										.getCurrentPosition(function(position) {
-											lat = position.coords.latitude, // 위도
-											lon = position.coords.longitude; // 경도
-
-											var locPosition = new kakao.maps.LatLng(
-													lat, lon); // 접속 위치 좌표
-
-											console.log(lat);
-											console.log(lon);
-
-											var message = '클릭한 위치의 위도는 ' + lat
-													+ ' 이고, ';
-											message += '경도는 ' + lon + ' 입니다';
-
-											// 위도, 경도 인풋 태그에 값 넣기
-											object_scan_loc_lat.value = lat;
-											object_scan_loc_lon.value = lon;
-											getAddressFromCoords(lat, lon,
-													"scan");
-
-											// 지도 중심을 접속 위치로 변경
-											map.setCenter(locPosition);
-										});
-							}
-
-							//지도를 생성합니다    
-							var map = new kakao.maps.Map(mapContainer,
-									mapOption);
-
-							var marker = new kakao.maps.Marker({
-								// 지도 중심좌표에 마커를 생성합니다 
-								position : map.getCenter()
-							});
-
-							// 지도에 마커를 표시합니다
-							marker.setMap(map);
-
-							kakao.maps.event.addListener(map, 'click',
-									function(mouseEvent) {
-										// 클릭한 위도, 경도 정보를 가져옵니다 
-										var latlng = mouseEvent.latLng;
-
-										// 마커 위치를 클릭한 위치로 옮깁니다
-										marker.setPosition(latlng);
-
-										var message = '클릭한 위치의 위도는 '
-												+ latlng.getLat() + ' 이고, ';
-										message += '경도는 ' + latlng.getLng()
-												+ ' 입니다';
-
-										lat = latlng.getLat();
-										lon = latlng.getLng();
-
-										// 위도, 경도 인풋 태그에 값 넣기
-										object_keeping_place_lat.value = lat;
-										object_keeping_place_lon.value = lon;
-										getAddressFromCoords(lat, lon,
-												'keeping');
-
-									});
-
-							//위치 좌표에 대한 주소 정보 표시 함수
-							var geocoder = new kakao.maps.services.Geocoder();
-
-							// 타입 파라미터로 스캔 장소, 보관 장소 구분 scan, keeping
-							function getAddressFromCoords(latitude, longitude,
-									type) {
-								geocoder
-										.coord2Address(
-												longitude,
-												latitude,
-												function(result, status) {
-													if (status === kakao.maps.services.Status.OK) {
-														if (type === "scan") {
-															object_scan_loc.value = result[0].address.address_name;
-															console
-																	.log(result[0].address.address_name);
-														} else if (type === "keeping") {
-															object_keeping_place.value = result[0].address.address_name;
-															console
-																	.log(result[0].address.address_name);
-														}
-													} else {
-														console
-																.log("주소를 가져올 수 없습니다.");
-													}
-												});
-							}
-
-							// 위치 좌표에 대한 주소 정보 표시 끝
-
-							//지도 타입 변경 컨트롤을 생성한다
-							var mapTypeControl = new kakao.maps.MapTypeControl();
-							//지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
-							map.addControl(mapTypeControl,
-									kakao.maps.ControlPosition.TOPRIGHT);
-							//지도에 확대 축소 컨트롤을 생성한다
-							var zoomControl = new kakao.maps.ZoomControl();
-							//지도의 우측에 확대 축소 컨트롤을 추가한다
-							map.addControl(zoomControl,
-									kakao.maps.ControlPosition.RIGHT);
-						</script>
-
+		<script type="text/javascript" src="resources/js/kakao_map_lost_item_form.js"></script>
+		<script type="text/javascript" src="../resources/js/kakao_map_lost_item_form.js"></script>
+		
 </body>
 </html>

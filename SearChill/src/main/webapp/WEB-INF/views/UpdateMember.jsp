@@ -1,57 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
 <title>Insert title here</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description"
-	content="Free HTML5 Website Template by FreeHTML5.co" />
-<meta name="keywords"
-	content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-<meta name="author" content="FreeHTML5.co" />
-<style type="text/css">
-.ladioLabel {
-	display: inline-block;
-	cursor: pointer;
-	height: 35px;
-	width: 49%;
-	border: 2px solid rgba(0, 0, 0, 0.1);
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	-ms-border-radius: 7px;
-	border-radius: 7px;
-	line-height: 34px;
-	text-align: center;
-	font-weight: bold;
-	font-size: 25px;
-	background-color: #fff;
-	color: #333;
-}
-
-input[type=radio]:checked+label {
-	background-color: #333;
-	color: #fff;
-}
-</style>
-
-<!-- ±¸±Û ÆùÆ® ·Îµå -->
-
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
-<!-- CSS ÆÄÀÏ ·Îµå -->
-<link rel="stylesheet" href="resources/css/animate.css">
-<link rel="stylesheet" href="resources/css/icomoon.css">
-<link rel="stylesheet" href="resources/css/bootstrap.css">
-<link rel="stylesheet" href="resources/css/flexslider.css">
-<link rel="stylesheet" href="resources/css/style.css">
-
-<!-- Modernizr JS ·Îµå -->
-<script src="resources/js/modernizr-2.6.2.min.js"></script>
+<%@ include file="/WEB-INF/views/common/head.jsp" %>
 
 
 </head>
@@ -60,63 +15,7 @@ input[type=radio]:checked+label {
 	<div id="fh5co-page">
 
 
-		<!-- ³×ºñ°ÔÀÌ¼Ç Åä±Û ¹öÆ° -->
-		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-		<aside id="fh5co-aside" role="complementary"
-			class="border js-fullheight">
-			<!-- ·Î°í -->
-			<h1 id="fh5co-logo">
-				<a href="goMain"> <img
-					src="<c:url value='/resources/images/searchill.png' />"
-					alt="Searchill ·Î°í" style="width: 250px; height: auto;">
-				</a>
-			</h1>
-
-			<!-- ¸ŞÀÎ ¸Ş´º -->
-			<nav id="fh5co-main-menu" role="navigation">
-				<ul>
-					<!-- <li class="fh5co-active"> -->
-					<li><a href="goMain" class="menu-btn">Home</a></li>
-
-					<!-- È¸¿ø -->
-					<c:if test="${loginuser != null}">
-
-						<li><a href="qrMain" class="menu-btn">QRÄÚµå</a></li>
-						<li><a href="myLostItemNotice" class="menu-btn">³» ºĞ½Ç¹° ½Àµæ
-								Á¤º¸</a></li>
-					</c:if>
-					<!-- ºñÈ¸¿ø -->
-					<c:if test="${loginuser == null}">
-						<li><a href="memberMain" class="menu-btn">QRÄÚµå</a></li>
-						<li><a href="memberMain" class="menu-btn">³» ºĞ½Ç¹° ½Àµæ Á¤º¸</a></li>
-					</c:if>
-					<li><a href="lostItemForm" class="menu-btn">½Àµæ¹° ½Å°í</a></li>
-					<li><a href="mapMain" class="menu-btn">Áöµµ</a></li>
-
-				</ul>
-			</nav>
-			<!-- ÇªÅÍ -->
-			<div class="fh5co-footer">
-				<!-- ·Î±×ÀÎ ¹× È¸¿øÁ¤º¸ ¼öÁ¤ ¹öÆ° Ãß°¡ -->
-				<div class="fh5co-login">
-					<c:if test="${loginuser != null}">
-						<p>
-							<a class="btn btn-primary" href="logout">Logout</a>
-						</p>
-					</c:if>
-				</div>
-
-				
-				<!-- ÀúÀÛ±Ç ¹× µğÀÚÀÎ Á¤º¸ -->
-<!-- 				<p>
-					<small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
-							by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
-					</span> <span>Demo Images: <a href="https://unsplash.com/"
-							target="_blank">Unsplash</a></span></small>
-				</p> -->
-			</div>
-
-		</aside>
+		    <%@ include file="/WEB-INF/views/common/fh5co-aside.jsp" %>
 
 
 		<div id="fh5co-main">
@@ -124,66 +23,62 @@ input[type=radio]:checked+label {
 				<div class="row row-bottom-padded-md">
 					<div class="animate-box" data-animate-effect="fadeInLeft">
 
-						<!-- ³»¿ë -->
+						<!-- ë‚´ìš© -->
 						<form action="UpdateMember" method="post">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="row">
+									<div class="row flex-center">
 										<div class="col-md-6">
 											<div class="form-group">
 												<input type="text" class="form-control"
-													placeholder="Á¢¼ÓÇÑ ID : ${loginuser.mem_id}"
+													placeholder="ì ‘ì†í•œ ID : ${loginuser.mem_id}"
 													readonly="readonly">
 											</div>
 											<div class="form-group">
 												<input type="email" class="form-control" name="mem_email"
-													value="${loginuser.mem_email}" placeholder="ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä"
+													value="${loginuser.mem_email}" placeholder="ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”"
 													required>
 											</div>
 											<div class="form-group">
 												<input type="password" class="form-control" name="mem_pw"
-													placeholder="PW¸¦ ÀÔ·ÂÇÏ¼¼¿ä" required>
+													placeholder="PWë¥¼ ì…ë ¥í•˜ì„¸ìš”" required>
 											</div>
 											<div class="form-group">
 												<input type="text" class="form-control" name="mem_name"
-													value="${loginuser.mem_name}" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä"
+													value="${loginuser.mem_name}" placeholder="ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”"
 													required>
 											</div>
 											<div class="form-group">
 												<input type="text" class="form-control" name="mem_phone"
-													value="${loginuser.mem_phone}" placeholder="ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä"
+													value="${loginuser.mem_phone}" placeholder="ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”"
 													required>
 											</div>
 											<div class="form-group phone-open">
 												<input type="text" class="form-control" id="radioMessage"
-													placeholder="QRÄÚµåÀÇ °³ÀÎÁ¤º¸ Á¦°ø ¿©ºÎ" readonly="readonly">
+													placeholder="QRì½”ë“œì˜ ê°œì¸ì •ë³´ ì œê³µ ì—¬ë¶€" readonly="readonly">
 												<input type="radio" id="radioSelect" style="display: none"
 													name="mem_phone_open" value="1"
 													${loginuser.mem_phone_open == '1' ? 'checked' : ''}><label
 													onclick="radioMessage1()" class="ladioLabel"
-													for="radioSelect"> °ø°³</label> <input type="radio"
+													for="radioSelect"> ê³µê°œ</label> <input type="radio"
 													id="radioSelect2" name="mem_phone_open" value="0"
 													style="display: none"
 													${loginuser.mem_phone_open == '0' ? 'checked' : ''}><label
 													class="ladioLabel" for="radioSelect2"
-													onclick="radioMessage2()"> ºñ°ø°³</label>
+													onclick="radioMessage2()"> ë¹„ê³µê°œ</label>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<input type="submit" class="btn btn-primary btn-md"
-													value="È¸¿øÁ¤º¸ ¼öÁ¤">
+													value="íšŒì›ì •ë³´ ìˆ˜ì •">
 											</div>
 										</div>
 
 									</div>
 						</form>
 
-						<!-- ³»¿ë³¡ -->
-
-
-				<br><br><br><br><br><br><br><br><br>
-				<br><br><br><br><br><br><br><br><br>
+						<!-- ë‚´ìš©ë -->
 
 					</div>
 				</div>
@@ -193,32 +88,17 @@ input[type=radio]:checked+label {
 		</div>
 	</div>
 
-	<!-- jQuery ·Îµå -->
-	<script src="resources/js/jquery.min.js"></script>
-	<script src="resources/js/jquery.scrolly.min.js"></script>
-	<script src="resources/js/jquery.scrollex.min.js"></script>
-	<script src="resources/js/skel.min.js"></script>
-	<script src="resources/js/util.js"></script>
-	<!-- jQuery Easing ·Îµå -->
-	<script src="resources/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap ·Îµå -->
-	<script src="resources/js/bootstrap.min.js"></script>
-	<!-- Waypoints ·Îµå -->
-	<script src="resources/js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider ·Îµå -->
-	<script src="resources/js/jquery.flexslider-min.js"></script>
+<%@ include file="/WEB-INF/views/common/bodyScripts.jsp" %>
 
-	<!-- ¸ŞÀÎ JS ·Îµå -->
-	<script src="resources/js/main.js"></script>
 
 	<script type="text/javascript">
 		function radioMessage1() {
 			$("#radioMessage").attr("placeholder",
-					"½ÀµæÀÚ°¡ QRÄÚµå ½ºÄµ ½Ã ¿¬¶ôÃ³¸¦ ¾Ë ¼ö ÀÖ½À´Ï´Ù.")
+					"ìŠµë“ìê°€ QRì½”ë“œ ìŠ¤ìº” ì‹œ ì—°ë½ì²˜ë¥¼ ì•Œ ìˆ˜ ìˆìŠµë‹ˆë‹¤.")
 		}
 		function radioMessage2() {
 			$("#radioMessage").attr("placeholder",
-					"½ÀµæÀÚ°¡ QRÄÚµå ½ºÄµ ½Ã ¿¬¶ôÃ³¸¦ ¾Ë ¼ö ¾ø½À´Ï´Ù.")
+					"ìŠµë“ìê°€ QRì½”ë“œ ìŠ¤ìº” ì‹œ ì—°ë½ì²˜ë¥¼ ì•Œ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.")
 		}
 	</script>
 

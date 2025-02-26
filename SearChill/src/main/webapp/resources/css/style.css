@@ -230,6 +230,10 @@ figure figcaption {
 	white-space: nowrap; /* 줄바꿈 방지 */
 }
 
+
+
+
+
 /* 돋보기 아이콘 스타일 */
 /* 돋보기 아이콘 스타일 */
 #search-icon {
@@ -572,12 +576,14 @@ figure figcaption {
 	margin: 0 auto;
 	padding: 4em 0;
 	clear: both;
+min-height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
 	#fh5co-main .fh5co-narrow-content {
 		width: 100%;
 		padding: 4em 1em;
+min-height: 100vh;
 	}
 }
 
@@ -1629,4 +1635,27 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
 	align-items: center;
 	flex-direction: column;
 	height: 100%;
+}
+
+.ladioLabel {
+	display: inline-block;
+	cursor: pointer;
+	height: 35px;
+	width: 49%;
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-ms-border-radius: 7px;
+	border-radius: 7px;
+	line-height: 34px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 25px;
+	background-color: #fff;
+	color: #333;
+}
+
+input[type=radio]:checked+label {
+	background-color: #333;
+	color: #fff;
 }
