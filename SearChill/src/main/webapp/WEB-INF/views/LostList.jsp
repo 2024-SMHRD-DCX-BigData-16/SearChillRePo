@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
 	content="Free HTML5 Website Template by FreeHTML5.co" />
@@ -17,9 +16,9 @@
 <meta name="author" content="FreeHTML5.co" />
 
 <!-- 구글 폰트 로드 -->
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
-	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
 <!-- CSS 파일 로드 -->
 <link rel="stylesheet" href="resources/css/animate.css">
@@ -27,6 +26,7 @@
 <link rel="stylesheet" href="resources/css/bootstrap.css">
 <link rel="stylesheet" href="resources/css/flexslider.css">
 <link rel="stylesheet" href="resources/css/style.css">
+<link rel="stylesheet" href="resources/css/table.css">
 
 <!-- Modernizr JS 로드 -->
 <script src="resources/js/modernizr-2.6.2.min.js"></script>
@@ -55,19 +55,6 @@
     }
 }
 
-/*  추가: 현재 페이지 버튼 스타일  */
-.current-page {
-    background-color: #3498db; /* 파란색 배경 */
-    color: white !important; /* 흰색 글자, important로 기존 스타일보다 우선 적용 */
-    font-weight: bold; /* 글자 굵게 */
-    /* 필요에 따라 다른 스타일 추가 (padding, border 등) */
-}
-.current-page:link, .current-page:visited, .current-page:hover, .current-page:active {
-    color: white !important; /* 링크 관련 상태에서도 흰색 글자 유지 */
-    text-decoration: none; /* 밑줄 제거 */
-}
-
-</style>
 
 </head>
 <body>
@@ -77,89 +64,84 @@
 
 		<!-- 네비게이션 토글 버튼 -->
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-		<aside id="fh5co-aside" role="complementary"
-			class="border js-fullheight">
-			<!-- 로고 -->
-			<h1 id="fh5co-logo">
-				<a href="goMain">Searchill</a>
-			</h1>
-			<!-- 메인 메뉴 -->
-			<nav id="fh5co-main-menu" role="navigation">
-				<ul>
-					<li><a href="goMain">Home</a></li>
-					<!-- 회원 -->
-					<c:if test="${loginuser != null}">
+      <aside id="fh5co-aside" role="complementary"
+         class="border js-fullheight"> <!-- 로고 -->
+      <h1 id="fh5co-logo">
+         <a href="goMain"> <img
+            src="<c:url value='/resources/images/searchill.png' />"
+            alt="Searchill 로고" style="width: 250px; height: auto;">
+         </a>
+      </h1>
 
-						<li><a href="qrMain">QR코드</a></li>
-						<li><a href="myLostItemNotice">내 분실물 습득 정보</a></li>
-					</c:if>
-					<!-- 비회원 -->
-					<c:if test="${loginuser == null}">
-						<li><a href="memberMain">QR코드</a></li>
-						<li><a href="memberMain">내 분실물 습득 정보</a></li>
-					</c:if>
-					<li><a href="lostItemForm">습득물 신고(주인을 찾아줘요)</a></li>
-					<li><a href="mapMain">지도</a></li>
+      <!-- 메인 메뉴 --> <nav id="fh5co-main-menu" role="navigation">
+      <ul>
+         <!-- <li class="fh5co-active"> -->
+         <li><a href="goMain" class="menu-btn">Home</a></li>
 
-				</ul>
-			</nav>
-			<!-- 푸터 -->
-			<div class="fh5co-footer">
-				<!-- 로그인 및 회원정보 수정 버튼 추가 -->
+         <!-- 회원 -->
+         <c:if test="${loginuser != null}">
+
+            <li><a href="qrMain" class="menu-btn">QR코드</a></li>
+            <li><a href="myLostItemNotice" class="menu-btn">내 분실물 습득 정보</a></li>
+         </c:if>
+         <!-- 비회원 -->
+         <c:if test="${loginuser == null}">
+            <li><a href="memberMain" class="menu-btn">QR코드</a></li>
+            <li><a href="memberMain" class="menu-btn">내 분실물 습득 정보</a></li>
+         </c:if>
+         <li><a href="lostItemForm" class="menu-btn">습득물 신고</a></li>
+         <li><a href="mapMain" class="menu-btn">지도</a></li>
+
+      </ul>
+      </nav> <!-- 푸터 -->
+      <div class="fh5co-footer">
+         <!-- 로그인 및 회원정보 수정 버튼 추가 -->
 				<div class="fh5co-login">
-					<c:if test="${loginuser == null}">
-						<p>
-							<a class="btn btn-primary" href="memberMain">Login</a>
-						</p>
-					</c:if>
 					<c:if test="${loginuser != null}">
 						<p>
 							<a class="btn btn-primary" href="logout">Logout</a>
 						</p>
-						<p>
-							<a class="btn btn-secondary" href="updateUser">Edit Profile</a>
-						</p>
 					</c:if>
-
 				</div>
 
-				<!-- 저작권 및 디자인 정보 -->
-				<p>
-					<small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
-							by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
-					</span> <span>Demo Images: <a href="https://unsplash.com/"
-							target="_blank">Unsplash</a></span></small>
-				</p>
-			</div>
+         <!-- 저작권 및 디자인 정보 -->
+<!--          <p>
+            <small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
+                  by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
+            </span> <span>Demo Images: <a href="https://unsplash.com/"
+                  target="_blank">Unsplash</a></span></small>
+         </p> -->
+      </div>
 
-		</aside>
+      </aside>
+
 
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+					<div class="col-md-9 animate-box" data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
 
 		
-
-<div id="top"></div>
 	<h1>습득물 조회 결과</h1>
 
-
-
 	<div id="loading"></div>
+<div class="table-responsive">
 
 	<!-- 세부 정보 테이블 -->
-	<table id="detailTable" border="1px" style="display: none;">
+	<table id="detailTable" class="table table-bordered" border="1px" style="display: none;">
 		<thead>
 			<tr>
 				<th>이미지</th>
 				<th>물품명</th>
-				<th>보관 장소</th>
-				<th>습득 날짜
-					<button onclick="sortTableByDate()">정렬</button>
+				<th width="85px">보관 장소</th>
+				<th width="115px">습득 날짜
+					<button onclick="sortTableByDate()" style="
+    padding-left: 2px;
+    padding-right: 2px;
+					">⇅</button>
 				</th>
 				<th>전화번호</th>
 			</tr>
@@ -167,8 +149,12 @@
 		<tbody id="detailBody"></tbody>
 	</table>
 
+</div>
 <!-- 페이지 -->
-<div>
+
+<div id="tabs">
+  <ul>
+
 <%
     String currentPage = request.getParameter("pageNo"); // 현재 페이지 번호 파라미터로 받기
     if (currentPage == null || currentPage.isEmpty()) {
@@ -176,20 +162,20 @@
     }
 	for(int i =1; i<=10; i++){
 	%>
-    <a href="submitAddress?roadAddress=${sessionScope.mapAddress.roadAddress}&jibunAddress=${sessionScope.mapAddress.jibunAddress}&PRDT_NM=${sessionScope.mapAddress.PRDT_NM}&pageNo=<%=i %>"
+    <li><a href="submitAddress?roadAddress=${sessionScope.mapAddress.roadAddress}&jibunAddress=${sessionScope.mapAddress.jibunAddress}&PRDT_NM=${sessionScope.mapAddress.PRDT_NM}&pageNo=<%=i %>"
     <% if (String.valueOf(i).equals(currentPage)) { // 현재 페이지 번호와 버튼 번호 비교 %>
-        class="current-page"  /* ** 현재 페이지 버튼에 current-page 클래스 추가 ** */
+        class="current-page"
     <% } %>
-    ><%=i %></a>
+    ><span><%=i %></span></a></li>
 <% }
 %>
-
+</ul>
 <div style="display: inline;">
 <form action="submitAddress">
 <input type="text" name="roadAddress" value="${sessionScope.mapAddress.roadAddress}" style="display: none">
 <input type="text" name="jibunAddress" value="${sessionScope.mapAddress.jibunAddress}" style="display: none">
 <input type="text" name="pageNo" size="1">
-<input type="submit" value="원하는 페이지로 이동">
+<input type="submit" value="이동">
 </form>
 
 </div>
@@ -207,87 +193,14 @@
 
 						<!-- 내용끝 -->
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-						<h2 class="fh5co-heading">About Company</h2>
-						<p>내용내용</p>
-						<p>내용</p>
+
 					</div>
 				</div>
 			</div>
 
-			<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box"
-					data-animate-effect="fadeInLeft">Our Services</h2>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-settings"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Strategy</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-search4"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Explore</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
 
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-paperplane"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Direction</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-params"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Expertise</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="fh5co-narrow-content">
-				<div class="row">
-					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
-						<h1 class="fh5co-heading-colored">Get in touch</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-						data-animate-effect="fadeInLeft">
-						<p class="fh5co-lead">ㄱㄴㄷㄹㅁㅂ</p>
-						<p>
-							<a href="#" class="btn btn-primary">Learn More</a>
-						</p>
-					</div>
-
-				</div>
-			</div>
 		</div>
 	</div>
 

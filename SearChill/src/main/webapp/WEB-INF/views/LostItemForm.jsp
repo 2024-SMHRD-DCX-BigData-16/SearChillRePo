@@ -6,7 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
 	content="Free HTML5 Website Template by FreeHTML5.co" />
@@ -15,9 +14,9 @@
 <meta name="author" content="FreeHTML5.co" />
 
 <!-- 구글 폰트 로드 -->
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
-	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
 <!-- CSS 파일 로드 -->
 <link rel="stylesheet" href="../resources/css/animate.css">
@@ -52,26 +51,32 @@
 			class="border js-fullheight">
 			<!-- 로고 -->
 			<h1 id="fh5co-logo">
-				<a href="goMain">Searchill</a>
+				<a href="goMain"> <img
+					src="<c:url value='/resources/images/searchill.png' />"
+					alt="Searchill 로고" style="width: 250px; height: auto;">
+				</a>
 			</h1>
+
 			<!-- 메인 메뉴 -->
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li><a href="goMain">Home</a></li>
+					<!-- <li class="fh5co-active"> -->
+					<li><a href="goMain" class="menu-btn">Home</a></li>
+
 					<!-- 회원 -->
 					<c:if test="${loginuser != null}">
 
-						<li><a href="qrMain">QR코드</a></li>
-						<li><a href="myLostItemNotice">내 분실물 습득 정보</a></li>
+						<li><a href="qrMain" class="menu-btn">QR코드</a></li>
+						<li><a href="myLostItemNotice" class="menu-btn">내 분실물 습득
+								정보</a></li>
 					</c:if>
 					<!-- 비회원 -->
 					<c:if test="${loginuser == null}">
-						<li><a href="memberMain">QR코드</a></li>
-						<li><a href="memberMain">내 분실물 습득 정보</a></li>
+						<li><a href="memberMain" class="menu-btn">QR코드</a></li>
+						<li><a href="memberMain" class="menu-btn">내 분실물 습득 정보</a></li>
 					</c:if>
-					
-					<li><a href="goMain">습득물 신고(주인을 찾아줘요)</a></li>
-					<li><a href="mapMain">지도</a></li>
+					<li><a href="goMain" class="menu-btn">습득물 신고</a></li>
+					<li><a href="mapMain" class="menu-btn">지도</a></li>
 
 				</ul>
 			</nav>
@@ -79,29 +84,19 @@
 			<div class="fh5co-footer">
 				<!-- 로그인 및 회원정보 수정 버튼 추가 -->
 				<div class="fh5co-login">
-					<c:if test="${loginuser == null}">
-						<p>
-							<a class="btn btn-primary" href="memberMain">Login</a>
-						</p>
-					</c:if>
 					<c:if test="${loginuser != null}">
 						<p>
 							<a class="btn btn-primary" href="logout">Logout</a>
 						</p>
-						<p>
-							<a class="btn btn-secondary" href="updateUser">Edit Profile</a>
-						</p>
 					</c:if>
-
 				</div>
-
 				<!-- 저작권 및 디자인 정보 -->
-				<p>
+<!-- 				<p>
 					<small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
 							by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
 					</span> <span>Demo Images: <a href="https://unsplash.com/"
 							target="_blank">Unsplash</a></span></small>
-				</p>
+				</p> -->
 			</div>
 
 		</aside>
@@ -110,39 +105,10 @@
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+					<div class="animate-box" data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
 
-<!-- 	<form action="">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Name">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Phone">
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<textarea name="" id="message" cols="30" rows="7"
-								class="form-control" placeholder="Message"></textarea>
-						</div>
-						<div class="form-group">
-							<input type="submit" class="btn btn-primary btn-md"
-								value="Send Message">
-						</div>
-					</div>
-
-				</div>
-	</form> -->
-	
 						<h2>습득물 등록</h2>
 						📢 빠른 전달을 위해 최대한 정확한 정보를 입력해 주시면 더욱 도움이 됩니다! 당신의 선한 행동이 큰 힘이 됩니다.
 						감사합니다! 😊✨
@@ -153,80 +119,142 @@
 							enctype="multipart/form-data">
 
 							<table border="1">
+
 								<tr>
-									<td>분실물 명:</td>
+									<td width="128px">분실물 명:</td>
 									<td><input type="text" name="object_name"
-										placeholder="ex)지갑, 에어팟"></td>
+										class="form-control" placeholder="ex)지갑, 에어팟"></td>
 								</tr>
 								<tr>
 									<td>분실물 사진:</td>
 									<!-- <td><input type="text" name="object_photo"></td> -->
-									<td><input type="file" name="object_photo"></td>
+									<td><input type="file" name="object_photo"
+										class="form-control"></td>
 								</tr>
 								<tr>
 									<td>메시지:</td>
-									<td><textarea name="notice_msg"
+									<td><textarea name="notice_msg" class="form-control"
 											placeholder="분실자에게 전할 메세지&#13;&#10;ex)OO경찰서에 맡겼습니다.&#13;&#10;습득자 연락처:010-0000-0000"
-											style="height: 135px; width: 250px;"></textarea></td>
+											style="height: 200px;"></textarea></td>
 								</tr>
 								<tr>
 									<td>보관 장소:</td>
 									<td><input type="text" id="object_keeping_place"
-										name="object_keeping_place" placeholder="지도를 클릭해주세요"
-										readonly="readonly"></td>
+										class="form-control" name="object_keeping_place"
+										placeholder="지도를 클릭해주세요" readonly="readonly"></td>
+								</tr>
+								<tr>
+								<td colspan="2">
+										<div class="map_wrap">
+							<div id="map"
+								style="width: 100%; height: 300px; position: relative; overflow: hidden;">
+							</div>
+						</div>
+								
+								</td>
+								
 								</tr>
 								<tr>
 									<td>보관 장소 상세 설명:
 									<td><input type="text" id="object_keeping_place_info"
-										name="object_keeping_place_info" placeholder="ex)1층 CU에 맡김">
-									</td>
+										class="form-control" name="object_keeping_place_info"
+										placeholder="ex)1층 CU에 맡김"></td>
 								</tr>
+								<tr style="display: none">
+									<td>
+										<!-- 숨길 인풋 태그 -->
+										<div style="display: none">
+											<input type="text" id="object_scan_loc_lat"
+												name="object_scan_loc_lat" placeholder="획득위도" value="0"
+												readonly="readonly"> <input type="text"
+												id="object_scan_loc_lon" name="object_scan_loc_lon"
+												placeholder="획득경도" value="180" readonly="readonly">
+											<input type="text" id="object_scan_loc"
+												name="object_scan_loc" placeholder="획득주소"
+												readonly="readonly"> <input type="text"
+												id="object_keeping_place_lat"
+												name="object_keeping_place_lat" placeholder="보관위도" value="0"
+												readonly="readonly"> <input type="text"
+												id="object_keeping_place_lon"
+												name="object_keeping_place_lon" placeholder="보관경도"
+												value="180" readonly="readonly">
 
+
+											<c:if test="${not empty param.mem_id}">
+												<%
+												/* mem_id가 null 문자열로 들어가는 경우 admin으로 받음 */
+												String submitMem_id = request.getParameter("mem_id");
+												if (request.getParameter("mem_id").equals("null")) {
+													submitMem_id = "admin";
+												}
+												%>
+												<input type="text" id="mem_id" name="mem_id"
+													value="<%=submitMem_id%>">
+
+											</c:if>
+
+										</div>
+
+
+									</td>
+
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><input type="submit"
+										value="습득물 등록" class="btn btn-primary btn-md"></td>
+								</tr>
 							</table>
-							<!-- 숨길 인풋 태그 -->
-							<div style="display: none">
-								<input type="text" id="object_scan_loc_lat"
-									name="object_scan_loc_lat" placeholder="획득위도" value="0"
-									readonly="readonly"> <input type="text"
-									id="object_scan_loc_lon" name="object_scan_loc_lon"
-									placeholder="획득경도" value="180" readonly="readonly"> <input
-									type="text" id="object_scan_loc" name="object_scan_loc"
-									placeholder="획득주소" readonly="readonly"> <input
-									type="text" id="object_keeping_place_lat"
-									name="object_keeping_place_lat" placeholder="보관위도" value="0"
-									readonly="readonly"> <input type="text"
-									id="object_keeping_place_lon" name="object_keeping_place_lon"
-									placeholder="보관경도" value="180" readonly="readonly">
 
-
-								<c:if test="${not empty param.mem_id}">
-									<%
-									/* mem_id가 null 문자열로 들어가는 경우 admin으로 받음 */
-									String submitMem_id = request.getParameter("mem_id");
-									if (request.getParameter("mem_id").equals("null")) {
-										submitMem_id = "admin";
-									}
-									%>
-									<input type="text" id="mem_id" name="mem_id"
-										value="<%=submitMem_id%>">
-
-								</c:if>
-
-
-							</div>
-
-							<input type="submit" value="습득물 등록">
 						</form>
 
 
+						<!-- 내용끝 -->
 
-						<div class="map_wrap">
-							<div id="map"
-								style="width: 400px; height: 300px; position: relative; overflow: hidden;">
-							</div>
-						</div>
+<br><br><br><br><br><br><br><br><br><br><br>
+
+					</div>
+				</div>
+			</div>
 
 
+		</div>
+	</div>
+
+	<!-- jQuery 로드 -->
+	<script src="../resources/js/jquery.min.js"></script>
+	<script src="../resources/js/jquery.scrolly.min.js"></script>
+	<script src="../resources/js/jquery.scrollex.min.js"></script>
+	<script src="../resources/js/skel.min.js"></script>
+	<script src="../resources/js/util.js"></script>
+	<!-- jQuery Easing 로드 -->
+	<script src="../resources/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap 로드 -->
+	<script src="../resources/js/bootstrap.min.js"></script>
+	<!-- Waypoints 로드 -->
+	<script src="../resources/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider 로드 -->
+	<script src="../resources/js/jquery.flexslider-min.js"></script>
+
+	<!-- 메인 JS 로드 -->
+	<script src="../resources/js/main.js"></script>
+
+	<!-- jQuery 로드 -->
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/js/jquery.scrolly.min.js"></script>
+	<script src="resources/js/jquery.scrollex.min.js"></script>
+	<script src="resources/js/skel.min.js"></script>
+	<script src="resources/js/util.js"></script>
+	<!-- jQuery Easing 로드 -->
+	<script src="resources/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap 로드 -->
+	<script src="resources/js/bootstrap.min.js"></script>
+	<!-- Waypoints 로드 -->
+	<script src="resources/js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider 로드 -->
+	<script src="resources/js/jquery.flexslider-min.js"></script>
+
+	<!-- 메인 JS 로드 -->
+	<script src="resources/js/main.js"></script>
 
 						<script type="text/javascript"
 							src="//dapi.kakao.com/v2/maps/sdk.js?appkey=73f10e0ecb2825848d7a1578ec6ca978&libraries=services,clusterer,drawing"></script>
@@ -364,129 +392,6 @@
 							map.addControl(zoomControl,
 									kakao.maps.ControlPosition.RIGHT);
 						</script>
-
-						<!-- 내용끝 -->
-
-
-						<h2 class="fh5co-heading">About Company</h2>
-						<p>내용내용</p>
-						<p>내용</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box"
-					data-animate-effect="fadeInLeft">Our Services</h2>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-settings"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Strategy</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-search4"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Explore</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-paperplane"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Direction</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-params"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Expertise</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="fh5co-narrow-content">
-				<div class="row">
-					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
-						<h1 class="fh5co-heading-colored">Get in touch</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-						data-animate-effect="fadeInLeft">
-						<p class="fh5co-lead">ㄱㄴㄷㄹㅁㅂ</p>
-						<p>
-							<a href="#" class="btn btn-primary">Learn More</a>
-						</p>
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- jQuery 로드 -->
-	<script src="../resources/js/jquery.min.js"></script>
-	<script src="../resources/js/jquery.scrolly.min.js"></script>
-	<script src="../resources/js/jquery.scrollex.min.js"></script>
-	<script src="../resources/js/skel.min.js"></script>
-	<script src="../resources/js/util.js"></script>
-	<!-- jQuery Easing 로드 -->
-	<script src="../resources/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap 로드 -->
-	<script src="../resources/js/bootstrap.min.js"></script>
-	<!-- Waypoints 로드 -->
-	<script src="../resources/js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider 로드 -->
-	<script src="../resources/js/jquery.flexslider-min.js"></script>
-
-	<!-- 메인 JS 로드 -->
-	<script src="../resources/js/main.js"></script>
-
-	<!-- jQuery 로드 -->
-	<script src="resources/js/jquery.min.js"></script>
-	<script src="resources/js/jquery.scrolly.min.js"></script>
-	<script src="resources/js/jquery.scrollex.min.js"></script>
-	<script src="resources/js/skel.min.js"></script>
-	<script src="resources/js/util.js"></script>
-	<!-- jQuery Easing 로드 -->
-	<script src="resources/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap 로드 -->
-	<script src="resources/js/bootstrap.min.js"></script>
-	<!-- Waypoints 로드 -->
-	<script src="resources/js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider 로드 -->
-	<script src="resources/js/jquery.flexslider-min.js"></script>
-
-	<!-- 메인 JS 로드 -->
-	<script src="resources/js/main.js"></script>
-
 
 </body>
 </html>

@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description"
 	content="Free HTML5 Website Template by FreeHTML5.co" />
@@ -16,9 +15,9 @@
 <meta name="author" content="FreeHTML5.co" />
 
 <!-- 구글 폰트 로드 -->
-<link
-	href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
-	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
 
 <!-- CSS 파일 로드 -->
 <link rel="stylesheet" href="resources/css/animate.css">
@@ -43,25 +42,32 @@
 			class="border js-fullheight">
 			<!-- 로고 -->
 			<h1 id="fh5co-logo">
-				<a href="goMain">Searchill</a>
+				<a href="goMain"> <img
+					src="<c:url value='/resources/images/searchill.png' />"
+					alt="Searchill 로고" style="width: 250px; height: auto;">
+				</a>
 			</h1>
+
 			<!-- 메인 메뉴 -->
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
-					<li><a href="goMain">Home</a></li>
+					<!-- <li class="fh5co-active"> -->
+					<li><a href="goMain" class="menu-btn">Home</a></li>
+
 					<!-- 회원 -->
 					<c:if test="${loginuser != null}">
 
-						<li><a href="qrMain">QR코드</a></li>
-						<li><a href="myLostItemNotice">내 분실물 습득 정보</a></li>
+						<li><a href="qrMain" class="menu-btn">QR코드</a></li>
+						<li><a href="myLostItemNotice" class="menu-btn">내 분실물 습득
+								정보</a></li>
 					</c:if>
 					<!-- 비회원 -->
 					<c:if test="${loginuser == null}">
-						<li><a href="memberMain">QR코드</a></li>
-						<li><a href="memberMain">내 분실물 습득 정보</a></li>
+						<li><a href="memberMain" class="menu-btn">QR코드</a></li>
+						<li><a href="memberMain" class="menu-btn">내 분실물 습득 정보</a></li>
 					</c:if>
-					<li><a href="lostItemForm">습득물 신고(주인을 찾아줘요)</a></li>
-					<li><a href="mapMain">지도</a></li>
+					<li><a href="lostItemForm" class="menu-btn">습득물 신고</a></li>
+					<li><a href="mapMain" class="menu-btn">지도</a></li>
 
 				</ul>
 			</nav>
@@ -69,29 +75,20 @@
 			<div class="fh5co-footer">
 				<!-- 로그인 및 회원정보 수정 버튼 추가 -->
 				<div class="fh5co-login">
-					<c:if test="${loginuser == null}">
-						<p>
-							<a class="btn btn-primary" href="memberMain">Login</a>
-						</p>
-					</c:if>
 					<c:if test="${loginuser != null}">
 						<p>
 							<a class="btn btn-primary" href="logout">Logout</a>
 						</p>
-						<p>
-							<a class="btn btn-secondary" href="updateUser">Edit Profile</a>
-						</p>
 					</c:if>
-
 				</div>
 
 				<!-- 저작권 및 디자인 정보 -->
-				<p>
+<!-- 				<p>
 					<small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
 							by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
 					</span> <span>Demo Images: <a href="https://unsplash.com/"
 							target="_blank">Unsplash</a></span></small>
-				</p>
+				</p> -->
 			</div>
 
 		</aside>
@@ -100,69 +97,75 @@
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+					<div class="animate-box" data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
 
-		
 
-	<h1>QR코드</h1>
+<div class="qr코드" style="display: inline-block;">
 
-	<c:if test="${loginuser != null}">
-		<div style="display: none;">
-			<label for="url">URL 입력:</label> <input type="text" id="url"
-				name="url"
-				value="http://localhost:8081/controller/qrScan/?mem_id=${loginuser.mem_id }" />
-			<br />
-		</div>
-	</c:if>
+						<h2 align="center">QR코드</h2>
+						<c:if test="${loginuser != null}">
+							<div style="display: none;">
+								<label for="url">URL 입력:</label> <input type="text" id="url"
+									name="url"
+									value="http://localhost:8081/controller/qrScan/?mem_id=${loginuser.mem_id }" />
+								<br />
+							</div>
+						</c:if>
 
-	<div id="qrCodeArea" style="display: none;">
-		<img id="qrImage" src="" alt="QR 코드 이미지" />
-		<div>
-			<a id="down_btn_img" href="" download="qrcode.png"><button>QR코드
-					다운로드 (원본)</button></a>
-		</div>
-	</div>
-	
-	<hr style="border: 1px dashed #d3d3d3; margin: 20px 0;">
-	<h2>QR코드 스티커</h2>
+						<div id="qrCodeArea" style="display: none;">
+							<img id="qrImage" src="" alt="QR 코드 이미지" />
+							<div>
+								<a id="down_btn_img" href="" download="qrcode.png"><button 
+										class="btn-success" style="margin-top:7px;width:130;padding-left: 10px;padding-right: 10px;">다운로드(원본)</button></a>
+							</div>
+						</div>
 
-	<canvas id="myCanvas" width="130" height="130"
+</div>
+
+
+<div class="스티커" style="display: inline-block;">
+						<h2 align="center">스티커</h2>
+
+ 						<canvas id="myCanvas" width="130" height="130"
+							>
+        Your browser does not support the canvas element.
+	</canvas>
+						<div>
+							<a id="down_btn_canvas" href="" download="qrcode_combined.png"><button
+									class="btn-success" style="width:130;padding-right: 3px;padding-left: 3px;" >다운로드(스티커)</button></a>
+						</div>
+</div>
+
+
+
+						<hr style="border: 1px dashed #d3d3d3; margin: 20px 0;">
+
+						<h2>명함 사이즈 QR코드</h2>
+
+						<div style="display: none">
+							<div id="qrCodeArea_card" style="display: none;">
+								<img id="qrImage_card" src="" alt="명함 사이즈 QR 코드 이미지" />
+								<div>
+									<a id="down_btn_img_card" href="" download="qrcode_card.png"><button
+											class="btn-success">다운로드 (원본)</button></a>
+									<%-- id 에 _card 접미사 추가 --%>
+								</div>
+							</div>
+						</div>
+
+						<canvas id="myCanvas_card" width="360" height="200"
+							<%-- id 에 _card 접미사 추가, 명함 사이즈 캔버스 크기 설정 --%>
 		style="border: 1px solid #d3d3d3;">
         Your browser does not support the canvas element.
 	</canvas>
-	<div>
-		<a id="down_btn_canvas" href="" download="qrcode_combined.png"><button>QR코드
-				다운로드 (스티커)</button></a>
-	</div>
-
-	<hr style="border: 1px dashed #d3d3d3; margin: 20px 0;">
-
-	<h2>명함 사이즈 QR코드</h2>
-
-	<div style="display: none">
-		<div id="qrCodeArea_card" style="display: none;">
-			<img id="qrImage_card" src="" alt="명함 사이즈 QR 코드 이미지" />
-			<div>
-				<a id="down_btn_img_card" href="" download="qrcode_card.png"><button>QR코드
-						다운로드 (원본)</button></a>
-				<%-- id 에 _card 접미사 추가 --%>
-			</div>
-		</div>
-	</div>
-
-	<canvas id="myCanvas_card" width="360" height="200"
-		<%-- id 에 _card 접미사 추가, 명함 사이즈 캔버스 크기 설정 --%>
-		style="border: 1px solid #d3d3d3;">
-        Your browser does not support the canvas element.
-	</canvas>
-	<div>
-		<a id="down_btn_canvas_card" href=""
-			download="qrcode_combined_card.png"><button>QR코드 다운로드
-				(명함)</button></a>
-		<%-- id 에 _card 접미사 추가 --%>
-	</div>
+						<div>
+							<a id="down_btn_canvas_card" href=""
+								download="qrcode_combined_card.png"><button class="btn-success" style="width:130;padding-left: 10px;padding-right: 10px;">
+									다운로드(명함)</button></a>
+							<%-- id 에 _card 접미사 추가 --%>
+						</div>
 
 
 
@@ -174,90 +177,15 @@
 
 						<!-- 내용끝 -->
 
+<br><br><br><br><br><br><br><br><br>
 
-						<h2 class="fh5co-heading">About Company</h2>
-						<p>내용내용</p>
-						<p>내용</p>
 					</div>
 				</div>
 			</div>
 
-			<div class="fh5co-narrow-content">
-				<h2 class="fh5co-heading animate-box"
-					data-animate-effect="fadeInLeft">Our Services</h2>
-				<div class="row">
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-settings"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Strategy</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-search4"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Explore</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
 
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-paperplane"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Direction</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="fh5co-feature animate-box"
-							data-animate-effect="fadeInLeft">
-							<div class="fh5co-icon">
-								<i class="icon-params"></i>
-							</div>
-							<div class="fh5co-text">
-								<h3>Expertise</h3>
-								<p>텍스트</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="fh5co-narrow-content">
-				<div class="row">
-					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
-						<h1 class="fh5co-heading-colored">Get in touch</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box"
-						data-animate-effect="fadeInLeft">
-						<p class="fh5co-lead">ㄱㄴㄷㄹㅁㅂ</p>
-						<p>
-							<a href="#" class="btn btn-primary">Learn More</a>
-						</p>
-					</div>
-
-				</div>
-			</div>
 		</div>
 	</div>
-
 	<!-- jQuery 로드 -->
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/js/jquery.scrolly.min.js"></script>

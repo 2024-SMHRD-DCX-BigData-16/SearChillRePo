@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* =======================================================
+*
+*    Template Style 
+*   Edit this section
+*
+* ======================================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* 테이블 배경색을 흰색으로 설정하여 가독성 확보 */
+    color: #333; /* 테이블 글자색을 어둡게 설정 */
+    border: 1px solid #ddd; /* 테이블 전체 테두리 색상 설정 */
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2; /* 테이블 헤더 배경색 */
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* 홀수/짝수 행 배경색을 다르게 하여 가독성 높임 (선택 사항) */
+}
+
+table img {
+    max-width: 100px; /* 이미지 최대 너비 조정 */
+    height: auto;
+    display: block; /* 이미지 아래 여백 제거 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.current-page {
+    background-color: #3498db; /* 파란색 배경 */
+    color: white !important; /* 흰색 글자, important로 기존 스타일보다 우선 적용 */
+    font-weight: bold; /* 글자 굵게 */
+    /* 필요에 따라 다른 스타일 추가 (padding, border 등) */
+}
+.current-page:link, .current-page:visited, .current-page:hover, .current-page:active {
+    color: white !important; /* 링크 관련 상태에서도 흰색 글자 유지 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+#tabs {
+	float:left;
+	width:100%;
+	background:#F9F7F3;
+	font-size:93%;
+	line-height:normal;
+	border-bottom:1px solid #C2BDAE;
+	}
+
+#tabs ul {
+	margin:0;
+	padding:10px 10px 0 50px;
+	list-style:none;
+	}
+
+#tabs li {
+	display:inline;
+	margin:0;
+	padding:0;
+	}
+
+#tabs a {
+	float:left;
+	background:url("/resources/images/tableft.gif") no-repeat left top;
+	margin:0;
+	padding:0 0 0 4px;
+	text-decoration:none;
+	}
+
+#tabs a span {
+	float:left;
+	display:block;
+	background:url("/resources/images/tabright.gif") no-repeat right top;
+	padding:5px 15px 4px 6px;
+	color:#9F9584;
+	}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs a span {float:none;}
+
+/* End IE5-Mac hack */
+#tabs a:hover span {
+	color:#4b3bb8;
+	}
+
+#tabs a:hover {
+	background-position:0% -42px;
+	}
+
+#tabs a:hover span {
+	background-position:100% -42px;
+	}
+	
+	
+#detailTable {
+    width: 100%; /* 테이블 너비를 100%로 설정 */
+    border-collapse: collapse; /* 테두리를 하나로 합침 */
+    margin-bottom: 20px; /* 테이블 아래 여백 추가 */
+}
+
+#detailTable th, #detailTable td {
+    border: 1px solid #ddd; /* 테두리 설정 */
+    padding: 8px; /* 셀 안쪽 여백 설정 */
+    text-align: left; /* 텍스트 정렬 */
+}
+
+#detailTable th {
+    background-color: #f2f2f2; /* 헤더 배경색 설정 */
+}
+
+/*# sourceMappingURL=style.css.map */
