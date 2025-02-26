@@ -105,13 +105,12 @@
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
-					<div class="animate-box" data-animate-effect="fadeInLeft">
+					<div class="animate-box flex-center" data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
 
 						<h2>습득물 등록</h2>
-						📢 빠른 전달을 위해 최대한 정확한 정보를 입력해 주시면 더욱 도움이 됩니다! 당신의 선한 행동이 큰 힘이 됩니다.
-						감사합니다! 😊✨
+						<h5>📢 빠른 전달을 위해 최대한 정확한 정보를 입력해 주시면 더욱 도움이 됩니다! ✨</h5>
 
 						<!-- 자동등록 : 분실물 고유번호 object_idx, QR 고유번호 qr_idx, 분실물 스캔 날짜 object_date-->
 

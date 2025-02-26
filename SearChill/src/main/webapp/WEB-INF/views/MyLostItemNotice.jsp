@@ -93,7 +93,7 @@
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
-				<div class="row row-bottom-padded-md">
+				<div class="row row-bottom-padded-md flex-center">
 					<div class="col-md-11 animate-box" data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->

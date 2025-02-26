@@ -102,7 +102,7 @@ map_wrap {
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
 				<div class="row row-bottom-padded-md">
-					<div class="animate-box" data-animate-effect="fadeInLeft">
+					<div class="animate-box flex-center" data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
 
@@ -127,7 +127,19 @@ map_wrap {
 										<button type="submit" class="btn btn-primary btn-md">인근 분실물 센터 조회</button>
 									</td>
 								</tr>
+<tr>
+<td colspan="2">
 
+						<div class="map_wrap">
+							<div id="map">
+							</div>
+							<div class="hAddr" style="display: none">
+								<span class="title"></span> <span id="centerAddr"></span>
+							</div>
+						</div>
+
+</td>
+</tr>
 
 							</table>
 
@@ -138,17 +150,10 @@ map_wrap {
 								style="display: none;">
 						</form>
 
+
+
+
 						<div>한 달 이내 등록된 분실물 마커</div>
-
-						<div class="map_wrap">
-							<div id="map">
-							</div>
-							<div class="hAddr" style="display: none">
-								<span class="title"></span> <span id="centerAddr"></span>
-							</div>
-						</div>
-
-
 
 
 
