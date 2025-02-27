@@ -34,6 +34,13 @@
 		</nav> 
 		<!-- 푸터 -->
 		<div class="fh5co-footer">
+							<div class="fh5co-login">
+						<c:if test="${loginuser != null}">
+							<p>
+								<a class="btn btn-primary" href="logout">Logout</a>
+							</p>
+						</c:if>
+					</div>
 		</div>
 
 		</aside>

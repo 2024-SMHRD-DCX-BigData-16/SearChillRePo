@@ -8,15 +8,12 @@
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/common/head.jsp" %>
 
-
 </head>
 <body>
 
 	<div id="fh5co-page">
 
-
 		    <%@ include file="/WEB-INF/views/common/fh5co-aside.jsp" %>
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -83,13 +80,10 @@
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 
 <%@ include file="/WEB-INF/views/common/bodyScripts.jsp" %>
-
 
 	<script type="text/javascript">
 		function radioMessage1() {

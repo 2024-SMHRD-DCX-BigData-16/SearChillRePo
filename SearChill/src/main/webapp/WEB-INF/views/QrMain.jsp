@@ -14,9 +14,7 @@
 
 	<div id="fh5co-page">
 
-
 		<%@ include file="/WEB-INF/views/common/fh5co-aside.jsp"%>
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -25,7 +23,6 @@
 						data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
-
 
 						<div class="qr코드" style="display: inline-block;">
 
@@ -103,14 +100,10 @@
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 	<%@ include file="/WEB-INF/views/common/bodyScripts.jsp"%>
 			<script type="text/javascript" src="resources/js/qr.js"></script>
-	
-	
 	
 </body>
 </html>

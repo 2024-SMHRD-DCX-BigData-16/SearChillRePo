@@ -49,13 +49,6 @@ QrScan -->
 						</p>
 					</c:if>
 				</div>
-				<!-- 저작권 및 디자인 정보 -->
-<!-- 				<p>
-					<small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed
-							by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a>
-					</span> <span>Demo Images: <a href="https://unsplash.com/"
-							target="_blank">Unsplash</a></span></small>
-				</p> -->
 			</div>
 
 		</aside>

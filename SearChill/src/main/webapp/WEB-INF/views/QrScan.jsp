@@ -14,9 +14,7 @@
 
 	<div id="fh5co-page">
 
-
 		<%@ include file="/WEB-INF/views/qrcommon/qrfh5co-aside.jsp"%>
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -59,25 +57,15 @@
 
 						</div>
 
-
-
-
-
-
 						<!-- 내용끝 -->
-
-
 
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 
 	<%@ include file="/WEB-INF/views/qrcommon/qrbodyScripts.jsp"%>
-
 
 </body>
 </html>

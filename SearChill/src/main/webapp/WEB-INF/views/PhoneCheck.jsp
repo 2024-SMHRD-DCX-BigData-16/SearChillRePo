@@ -13,9 +13,7 @@
 
 	<div id="fh5co-page">
 
-
 		<%@ include file="/WEB-INF/views/qrcommon/qrfh5co-aside.jsp"%>
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -33,7 +31,7 @@
 
 						<div>
 							<h3>📌 분실자 연락처:</h3>
-							<p style="font-size: 18px; font-weight: bold; color: #2c3e50;">
+							<p style="font-size: 18px; font-weight: bold; color: white;">
 								${phone}</p>
 						</div>
 
@@ -52,16 +50,11 @@
 							</form>
 						</c:if>
 
-
-
 						<!-- 내용끝 -->
-
 
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 <%@ include file="/WEB-INF/views/qrcommon/qrbodyScripts.jsp" %>

@@ -10,79 +10,70 @@
 <head>
 <title>Insert title here</title>
 <%@ include file="/WEB-INF/views/common/head.jsp"%>
+<script src="${pageContext.request.contextPath}/resources/js/login.js"
+	defer></script>
 
 </head>
 <body>
+  <body onload="openLoginPopup()">
 
 	<div id="fh5co-page">
 
-
 		<%@ include file="/WEB-INF/views/common/fh5co-aside.jsp"%>
+      <div id="fh5co-main">
+        <div class="fh5co-narrow-content">
+          <div class="row row-bottom-padded-md flex-center">
+            <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+              <!-- ✅ 로그인 버튼 삭제 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- ✅ 로그인 팝업 -->
+    <div class="login-overlay" id="loginOverlay">
+      <div class="login-box">
+        <h2 class="login-title">Login</h2>
 
-		<div id="fh5co-main">
-			<div class="fh5co-narrow-content">
-				<div class="row row-bottom-padded-md flex-center">
-					<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+        <form action="memberLogin" method="post">
+          <div class="input-group">
+            <input
+              type="text"
+              id="mem_id"
+              name="mem_id"
+              class="form-control"
+              placeholder="Id"
+              required
+            />
+          </div>
 
-						<!-- 내용 -->
-						<div class="login-container">
-							<div class="login-box flex-center">
-								<!-- 로그인 아이콘 -->
-								<div class="login-icon">
-									<img src="resources/images/logicon.png" alt="Login Icon">
-								</div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="mem_pw"
+              name="mem_pw"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+          </div>
 
-								<!-- 로그인 폼 -->
-								<c:if test="${loginuser == null}">
-									<h2 class="login-title">로그인</h2>
-									<form action="memberLogin" method="post">
-										<div class="input-group">
-											<label for="mem_id"><i class="icon-mail"></i> 아이디</label> <input
-												type="text" id="mem_id" name="mem_id" class="form-control"
-												required>
-										</div>
+          <button type="submit" class="login-btn">Login</button>
+        </form>
 
-										<div class="input-group">
-											<label for="mem_pw"><i class="icon-lock"></i> 비밀번호</label> <input
-												type="password" id="mem_pw" name="mem_pw"
-												class="form-control" required>
-										</div>
+        <div class="login-links">
+          <p>
+            계정이 없으신가요?
+            <a href="goJoin" class="register-link">회원가입하기</a>
+          </p>
+        </div>
 
-										<button type="submit" class="login-btn">로그인</button>
-									</form>
-
-									<div class="register-link">
-										<p>
-											계정이 없으신가요? <a href="goJoin">회원가입</a>
-										</p>
-									</div>
-								</c:if>
-
-								<!-- 로그인 후 회원 정보 및 로그아웃 -->
-								<c:if test="${loginuser != null}">
-									<h2 class="login-link">
-										<a href="updateUser">회원정보 수정</a>
-									</h2>
-									<h2 class="login-link">
-										<a href="logout"><b>로그아웃</b></a>
-									</h2>
-								</c:if>
-							</div>
-						</div>
-
-						<!-- 내용끝 -->
-
-
-					</div>
-				</div>
-			</div>
-
-
-		</div>
-	</div>
-
-	<%@ include file="/WEB-INF/views/common/bodyScripts.jsp" %>
+        <button class="close-btn" onclick="closeLoginPopup()">✕</button>
+      </div>
+    </div>
+    
+	<%@ include file="/WEB-INF/views/common/bodyScripts.jsp"%>
 
 </body>
 </html>

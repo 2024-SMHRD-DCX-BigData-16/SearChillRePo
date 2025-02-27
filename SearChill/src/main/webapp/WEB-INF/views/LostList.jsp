@@ -40,10 +40,7 @@
 
 	<div id="fh5co-page">
 
-
 	 <%@ include file="/WEB-INF/views/common/fh5co-aside.jsp" %>
-
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -51,10 +48,8 @@
 					<div class="col-md-9 animate-box " data-animate-effect="fadeInLeft">
 
 						<!-- 내용 -->
-
 		
 	<h1>습득물 조회 결과</h1>
-
 
 	<!-- 세부 정보 테이블 -->
 	<table id="detailTable" class="table table-bordered" border="1px" style="display: none;">
@@ -108,14 +103,8 @@
 
 </div>
 
-
 	<h3 id="lostNotice" style="display: none;">분실하신 분께서는 본인을 증명할 수 있는
 		서류를 지참하시어 보관중으로 기재되어 있는 기관에 방문하시어 보관물품을 수령하시기 바랍니다.</h3>
-
-
-
-
-
 
 						<!-- 내용끝 -->
 
@@ -124,8 +113,6 @@
 			</div>
 	<div id="loading"></div>
 <div class="table-responsive">
-
-
 		</div>
 	</div>
 

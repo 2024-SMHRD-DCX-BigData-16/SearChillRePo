@@ -14,9 +14,7 @@
 
 	<div id="fh5co-page">
 
-
 		    <%@ include file="/WEB-INF/views/common/fh5co-aside.jsp" %>
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -25,11 +23,7 @@
 
 						<!-- 내용 -->
 
-		
-
-
-${loginuser.mem_id}님의 QR코드로 등록된 분실물
-
+<%-- ${loginuser.mem_id}님의 QR코드로 등록된 분실물 --%>
 
 <table border="1px">
     <thead>
@@ -66,17 +60,12 @@ ${loginuser.mem_id}님의 QR코드로 등록된 분실물
 
 						<!-- 내용끝 -->
 
-
-
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 <%@ include file="/WEB-INF/views/common/bodyScripts.jsp" %>
-
 
 </body>
 

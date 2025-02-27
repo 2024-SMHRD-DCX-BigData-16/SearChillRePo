@@ -12,14 +12,12 @@
 
 <%@ include file="/WEB-INF/views/common/head.jsp" %>
 
-
 </head>
 <body>
 
 	<div id="fh5co-page">
 
     <%@ include file="/WEB-INF/views/common/fh5co-aside.jsp" %>
-
 
 		<div id="fh5co-main">
 			<!-- 메인 히어로 섹션 -->
@@ -47,6 +45,7 @@
 												class="english-text">Find what you’ve lost, faster
 												and easier with SearChill.</span>
 										</h2>
+										
 										<!-- 회원 -->
 										<c:if test="${loginuser != null}">
 											<p>
@@ -84,8 +83,6 @@
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 

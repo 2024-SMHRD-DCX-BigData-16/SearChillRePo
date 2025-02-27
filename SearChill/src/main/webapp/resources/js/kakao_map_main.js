@@ -87,13 +87,13 @@ $.ajax({
                 });
 
                 var infowindow = new kakao.maps.InfoWindow({
-                    content: '<div style="padding:5px;font-size:12px; width:200px; height:250px; ">' +
+                    content: '<div style="color:black;padding:5px;font-size:12px; width:200px; height:250px; ">' +
                     '<strong>물품명:</strong> ' + (item.object_name || "이름 없음") + '<br>' +
                     '<strong>보관 장소:</strong> ' + (item.object_keeping_place || "정보 없음") + '<br>' +
-                    '<strong>보관 장소 설명:</strong> ' + (item.object_keeping_place_info || "정보 없음") + '<br>' +
+                    '<strong>장소 상세:</strong> ' + (item.object_keeping_place_info || "정보 없음") + '<br>' +
                     '<strong>습득 일시:</strong> ' + (item.object_date || "정보 없음") + '<br>' +
                     '<strong>사진:</strong> ' + (item.object_photo ? '<img src="./resources/objectImages/' + item.object_photo + '" width="100" height="100" >  ' : "사진 없음") + '<br>' +
-                    '<strong>참고 메시지:</strong> ' + (item.notice_msg || "없음") +
+                    '<strong>메시지:</strong> ' + (item.notice_msg || "없음") +
                     '</div>'
                 });
 

@@ -14,9 +14,7 @@
 
 	<div id="fh5co-page">
 
-
 		<%@ include file="/WEB-INF/views/qrcommon/qrfh5co-aside.jsp" %>
-
 
 		<div id="fh5co-main">
 			<div class="fh5co-narrow-content">
@@ -36,27 +34,33 @@
 							<table border="1">
 
 								<tr>
-									<td width="128px">분실물 명:</td>
+									<td width="128px" align="center">분실물 명</td>
 									<td><input type="text" name="object_name"
 										class="form-control" placeholder="ex)지갑, 에어팟"></td>
 								</tr>
 								<tr>
-									<td>분실물 사진:</td>
+									<td align="center">분실물 사진</td>
 									<!-- <td><input type="text" name="object_photo"></td> -->
 									<td><input type="file" name="object_photo"
 										class="form-control"></td>
 								</tr>
 								<tr>
-									<td>메시지:</td>
+									<td align="center">메시지</td>
 									<td><textarea name="notice_msg" class="form-control"
 											placeholder="분실자에게 전할 메세지&#13;&#10;ex)OO경찰서에 맡겼습니다.&#13;&#10;습득자 연락처:010-0000-0000"
 											style="height: 200px;"></textarea></td>
 								</tr>
 								<tr>
-									<td>보관 장소:</td>
+									<td align="center">보관 장소</td>
 									<td><input type="text" id="object_keeping_place"
 										class="form-control" name="object_keeping_place"
 										placeholder="지도를 클릭해주세요" readonly="readonly"></td>
+								</tr>
+								<tr>
+									<td align="center">보관 장소 상세 설명
+									<td><input type="text" id="object_keeping_place_info"
+										class="form-control" name="object_keeping_place_info"
+										placeholder="ex)1층 CU에 맡김"></td>
 								</tr>
 								<tr>
 								<td colspan="2">
@@ -68,12 +72,6 @@
 								
 								</td>
 								
-								</tr>
-								<tr>
-									<td>보관 장소 상세 설명:
-									<td><input type="text" id="object_keeping_place_info"
-										class="form-control" name="object_keeping_place_info"
-										placeholder="ex)1층 CU에 맡김"></td>
 								</tr>
 								<tr style="display: none">
 									<td>
@@ -110,27 +108,22 @@
 
 										</div>
 
-
 									</td>
 
 								</tr>
 								<tr>
 									<td colspan="2" align="center"><input type="submit"
-										value="습득물 등록" class="btn btn-primary btn-md"></td>
+										value="습득물 등록" style="width: 100%" class="btn btn-primary btn-md"></td>
 								</tr>
 							</table>
 
 						</form>
 
-
 						<!-- 내용끝 -->
-
 
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div>
 
