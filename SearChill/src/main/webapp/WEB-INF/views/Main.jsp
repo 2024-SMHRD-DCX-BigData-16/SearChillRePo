@@ -28,7 +28,7 @@
 
 						<div class="overlay"></div>
 						<div class="container-fluid">
-							<div class="row">
+							<div class="row ">
 								<div
 									class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
 									<div class="slider-text-inner">

@@ -67,7 +67,6 @@ table img {
 .btn-danger:hover {
     background: rgba(150, 150, 150, 0.8); /* ✅ 더 진한 회색 */
     transform: scale(1.05); /* ✅ 조금만 커지도록 */
-
 }
 /* ✅ 페이지네이션 현재 페이지 스타일 */
 .current-page {
@@ -79,54 +78,4 @@ table img {
 .current-page:link, .current-page:visited, .current-page:hover, .current-page:active {
     color: white !important;
     text-decoration: none;
-}
-
-/* ✅ 탭 스타일 */
-#tabs {
-    float: left;
-    width: 100%;
-    background: #F9F7F3;
-    font-size: 93%;
-    line-height: normal;
-    border-bottom: 1px solid #C2BDAE;
-}
-
-#tabs ul {
-    margin: 0;
-    padding: 10px 10px 0 50px;
-    list-style: none;
-}
-
-#tabs li {
-    display: inline;
-    margin: 0;
-    padding: 0;
-}
-
-#tabs a {
-    float: left;
-    background: url("/resources/images/tableft.gif") no-repeat left top;
-    margin: 0;
-    padding: 0 0 0 4px;
-    text-decoration: none;
-}
-
-#tabs a span {
-    float: left;
-    display: block;
-    background: url("/resources/images/tabright.gif") no-repeat right top;
-    padding: 5px 15px 4px 6px;
-    color: #9F9584;
-}
-
-#tabs a:hover span {
-    color: #4b3bb8;
-}
-
-#tabs a:hover {
-    background-position: 0% -42px;
-}
-
-#tabs a:hover span {
-    background-position: 100% -42px;
 }

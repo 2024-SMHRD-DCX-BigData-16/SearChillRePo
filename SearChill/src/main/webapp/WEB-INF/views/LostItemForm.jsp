@@ -9,6 +9,9 @@
 
 <%@ include file="/WEB-INF/views/qrcommon/qrhead.jsp" %>
 
+<link rel="stylesheet" href="resources/css/maptable.css">
+<link rel="stylesheet" href="../resources/css/maptable.css">
+
 </head>
 <body>
 

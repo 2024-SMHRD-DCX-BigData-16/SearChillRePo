@@ -11,14 +11,194 @@
 
 <link rel="stylesheet" href="resources/css/table.css">
 <style>
+/* ✅ "습득물 조회 결과" 제목 스타일 */
+h1 {
+    font-size: 28px; /* 제목 크기 */
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* 블러 효과 */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 텍스트 그림자 */
+}
+
+/* ✅ 습득물 테이블 전체 스타일 */
+#detailTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08); /* 부드러운 반투명 배경 */
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* ✅ 테이블 헤더 스타일 */
+#detailTable th {
+    background: rgba(255, 255, 255, 0.15); /* 살짝 밝은 톤 */
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ✅ 테이블 셀 스타일 */
+#detailTable td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ 홀수 행 배경 */
+#detailTable tbody tr:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ✅ 짝수 행 배경 */
+#detailTable tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* ✅ 이미지 셀 */
+#detailTable img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.3);
+}
+
+/* ✅ 정렬 버튼 (⇅) 스타일 */
+.sort-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ✅ 정렬 버튼 hover 효과 */
+.sort-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* ✅ 정렬 버튼 active (눌렀을 때) 효과 */
+.sort-btn:active {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
+}
+/* ✅ 페이지네이션 스타일 */
+#tabs ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* 반투명 회색 */
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#tabs ul li {
+    margin: 0 5px;
+}
+
+#tabs ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ 현재 페이지 스타일 */
+#tabs ul li a.current-page {
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* ✅ 호버 효과 */
+#tabs ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* ✅ 페이지 이동 입력창 */
+#tabs input[type="text"] {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    justify-content: center;
+}
+
+/* ✅ 페이지 이동 버튼 */
+#tabs input[type="submit"] {
+    height: 35px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#tabs input[type="submit"]:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+/* ✅ 하단 안내 문구 정리 */
+#lostNotice {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    margin-top: 20px;
+}
+
+/* ✅ 로딩 스피너 */
 #loading {
-    border: 16px solid #f3f3f3; /* Light grey - border 전체 색상 지정 */
-    border-top: 16px solid #3498db; /* Blue - 로딩 영역 색상 지정 */
-    border-radius: 50%; /* 둥근 모서리 효과 */
-    width: 120px; /* 크기 지정 */
-    height: 120px;
-    animation: spin 2s linear infinite;
-    /* 키프레임 애니메이션값 2초 가속도 없이 일정하게 연속적인 로딩 */
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top: 8px solid #A7E0E2;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -27,13 +207,10 @@
 }
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
+
 </style>
 </head>
 <body>
@@ -52,24 +229,20 @@
 	<h1>습득물 조회 결과</h1>
 
 	<!-- 세부 정보 테이블 -->
-	<table id="detailTable" border="1px" style="display: none;">
-		<thead>
-			<tr>
-				<th>이미지</th>
-				<th>물품명</th>
-				<th width="85px">보관 장소</th>
-				<th width="115px">습득 날짜
-					<button onclick="sortTableByDate()" style="
-    padding-left: 2px;
-    padding-right: 2px; color: black;
-					">⇅</button>
-				</th>
-				<th>전화번호</th>
-			</tr>
-		</thead>
-		<tbody id="detailBody"></tbody>
-	</table>
-
+	<table id="detailTable" class="table table-bordered" border="1px" style="display: none;">
+    <thead>
+        <tr>
+            <th>이미지</th>
+            <th>물품명</th>
+            <th width="85px">보관 장소</th>
+            <th width="115px">습득 날짜
+                <button class="sort-btn" onclick="sortTableByDate()">⇅</button>
+            </th>
+            <th>전화번호</th>
+        </tr>
+    </thead>
+    <tbody id="detailBody"></tbody>
+</table>
 </div>
 <!-- 페이지 -->
 
@@ -95,8 +268,8 @@
 <form action="submitAddress">
 <input type="text" name="roadAddress" value="${sessionScope.mapAddress.roadAddress}" style="display: none">
 <input type="text" name="jibunAddress" value="${sessionScope.mapAddress.jibunAddress}" style="display: none">
-<input style="color: black;" type="text" name="pageNo" size="1">
-<input style="color: black;" type="submit" value="이동">
+<input type="text" name="pageNo" size="1">
+<input type="submit" value="이동">
 </form>
 
 </div>

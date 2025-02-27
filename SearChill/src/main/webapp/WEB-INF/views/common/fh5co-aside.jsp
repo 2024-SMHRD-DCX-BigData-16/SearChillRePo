@@ -18,6 +18,7 @@
 		<ul>
 			<!-- <li class="fh5co-active"> -->
 			<li><a href="goMain" class="menu-btn">Home</a></li>
+			<li><a href="mapMain" class="menu-btn">분실물 보관 지도</a></li>
 
 			<!-- 회원 -->
 			<c:if test="${loginuser != null}">
@@ -40,7 +41,6 @@
 				<li><a href="memberMain" class="menu-btn">내 분실물 습득 정보 </a></li>
 			</c:if>
 			<li><a href="lostItemForm" class="menu-btn">습득물 신고</a></li>
-			<li><a href="mapMain" class="menu-btn">분실물 보관 지도</a></li>
 
 		</ul>
 	</nav>
