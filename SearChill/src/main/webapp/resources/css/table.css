@@ -1,127 +1,132 @@
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon/icomoon.eot?srf3rx");
-  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), 
+       url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), 
+       url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), 
+       url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-/* =======================================================
-*
-*    Template Style 
-*   Edit this section
-*
-* ======================================================= */
+
+/* âœ… ë°˜íˆ¬ëª… ëª¨ë˜í•œ í…Œì´ë¸” ìŠ¤íƒ€ì¼ */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #ffffff; /* Å×ÀÌºí ¹è°æ»öÀ» Èò»öÀ¸·Î ¼³Á¤ÇÏ¿© °¡µ¶¼º È®º¸ */
-    color: #333; /* Å×ÀÌºí ±ÛÀÚ»öÀ» ¾îµÓ°Ô ¼³Á¤ */
-    border: 1px solid #ddd; /* Å×ÀÌºí ÀüÃ¼ Å×µÎ¸® »ö»ó ¼³Á¤ */
+    background: rgba(255, 255, 255, 0.15); /* âœ… ë°˜íˆ¬ëª… ë°°ê²½ */
+    backdrop-filter: blur(10px); /* âœ… ë¸”ëŸ¬ íš¨ê³¼ */
+    border-radius: 10px; /* âœ… ëª¨ì„œë¦¬ ë‘¥ê¸€ê²Œ */
+    overflow: hidden; /* âœ… ë‘¥ê·¼ í…Œë‘ë¦¬ ìœ ì§€ */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* âœ… ì€ì€í•œ ê·¸ë¦¼ì */
 }
 
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
+/* âœ… í…Œì´ë¸” í—¤ë” ìŠ¤íƒ€ì¼ */
 table th {
-    background-color: #f2f2f2; /* Å×ÀÌºí Çì´õ ¹è°æ»ö */
+   background: rgba(250, 240, 230, 0.9); /* âœ… ë² ì´ì§€ìƒ‰ */
+    color: #333; /* âœ… ê¸€ì ìƒ‰ìƒ (ì§™ì€ íšŒìƒ‰) */
     font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    border-bottom: 2px solid rgba(245, 222, 179, 0.9); ã„´
 }
 
+/* âœ… í…Œì´ë¸” ì…€ ìŠ¤íƒ€ì¼ */
+table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* âœ… ì§ìˆ˜ í–‰ ë°°ê²½ (í™€ìˆ˜/ì§ìˆ˜ êµ¬ë¶„í•˜ì—¬ ê°€ë…ì„± ë†’ì„) */
 table tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* È¦¼ö/Â¦¼ö Çà ¹è°æ»öÀ» ´Ù¸£°Ô ÇÏ¿© °¡µ¶¼º ³ôÀÓ (¼±ÅÃ »çÇ×) */
+    background: rgba(255, 255, 255, 0.1);
 }
 
+/* âœ… í…Œì´ë¸” ë‚´ë¶€ ì´ë¯¸ì§€ ìŠ¤íƒ€ì¼ */
 table img {
-    max-width: 100px; /* ÀÌ¹ÌÁö ÃÖ´ë ³Êºñ Á¶Á¤ */
+    max-width: 100px;
     height: auto;
-    display: block; /* ÀÌ¹ÌÁö ¾Æ·¡ ¿©¹é Á¦°Å */
+    display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.btn-danger {
+    background: rgba(180, 180, 180, 0.5); /* âœ… ì—°í•œ íšŒìƒ‰ ë°°ê²½ */
+    color: #444; /* âœ… X ê¸€ì”¨ ìƒ‰ì„ ì—°í•œ ê²€ì€ìƒ‰ */
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
+/* âœ… ë§ˆìš°ìŠ¤ë¥¼ ì˜¬ë ¸ì„ ë•Œ (ì‚´ì§ ì§„í•´ì§) */
+.btn-danger:hover {
+    background: rgba(150, 150, 150, 0.8); /* âœ… ë” ì§„í•œ íšŒìƒ‰ */
+    transform: scale(1.05); /* âœ… ì¡°ê¸ˆë§Œ ì»¤ì§€ë„ë¡ */
+
+}
+/* âœ… í˜ì´ì§€ë„¤ì´ì…˜ í˜„ì¬ í˜ì´ì§€ ìŠ¤íƒ€ì¼ */
 .current-page {
-    background-color: #3498db; /* ÆÄ¶õ»ö ¹è°æ */
-    color: white !important; /* Èò»ö ±ÛÀÚ, important·Î ±âÁ¸ ½ºÅ¸ÀÏº¸´Ù ¿ì¼± Àû¿ë */
-    font-weight: bold; /* ±ÛÀÚ ±½°Ô */
-    /* ÇÊ¿ä¿¡ µû¶ó ´Ù¸¥ ½ºÅ¸ÀÏ Ãß°¡ (padding, border µî) */
+    background-color: #3498db;
+    color: white !important;
+    font-weight: bold;
 }
+
 .current-page:link, .current-page:visited, .current-page:hover, .current-page:active {
-    color: white !important; /* ¸µÅ© °ü·Ã »óÅÂ¿¡¼­µµ Èò»ö ±ÛÀÚ À¯Áö */
-    text-decoration: none; /* ¹ØÁÙ Á¦°Å */
+    color: white !important;
+    text-decoration: none;
 }
+
+/* âœ… íƒ­ ìŠ¤íƒ€ì¼ */
 #tabs {
-	float:left;
-	width:100%;
-	background:#F9F7F3;
-	font-size:93%;
-	line-height:normal;
-	border-bottom:1px solid #C2BDAE;
-	}
+    float: left;
+    width: 100%;
+    background: #F9F7F3;
+    font-size: 93%;
+    line-height: normal;
+    border-bottom: 1px solid #C2BDAE;
+}
 
 #tabs ul {
-	margin:0;
-	padding:10px 10px 0 50px;
-	list-style:none;
-	}
+    margin: 0;
+    padding: 10px 10px 0 50px;
+    list-style: none;
+}
 
 #tabs li {
-	display:inline;
-	margin:0;
-	padding:0;
-	}
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
 
 #tabs a {
-	float:left;
-	background:url("/resources/images/tableft.gif") no-repeat left top;
-	margin:0;
-	padding:0 0 0 4px;
-	text-decoration:none;
-	}
+    float: left;
+    background: url("/resources/images/tableft.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+}
 
 #tabs a span {
-	float:left;
-	display:block;
-	background:url("/resources/images/tabright.gif") no-repeat right top;
-	padding:5px 15px 4px 6px;
-	color:#9F9584;
-	}
+    float: left;
+    display: block;
+    background: url("/resources/images/tabright.gif") no-repeat right top;
+    padding: 5px 15px 4px 6px;
+    color: #9F9584;
+}
 
-/* Commented Backslash Hack hides rule from IE5-Mac \*/
-#tabs a span {float:none;}
-
-/* End IE5-Mac hack */
 #tabs a:hover span {
-	color:#4b3bb8;
-	}
+    color: #4b3bb8;
+}
 
 #tabs a:hover {
-	background-position:0% -42px;
-	}
+    background-position: 0% -42px;
+}
 
 #tabs a:hover span {
-	background-position:100% -42px;
-	}
-	
-	
-#detailTable {
-    width: 100%; /* Å×ÀÌºí ³Êºñ¸¦ 100%·Î ¼³Á¤ */
-    border-collapse: collapse; /* Å×µÎ¸®¸¦ ÇÏ³ª·Î ÇÕÄ§ */
-    margin-bottom: 20px; /* Å×ÀÌºí ¾Æ·¡ ¿©¹é Ãß°¡ */
+    background-position: 100% -42px;
 }
-
-#detailTable th, #detailTable td {
-    border: 1px solid #ddd; /* Å×µÎ¸® ¼³Á¤ */
-    padding: 8px; /* ¼¿ ¾ÈÂÊ ¿©¹é ¼³Á¤ */
-    text-align: left; /* ÅØ½ºÆ® Á¤·Ä */
-}
-
-#detailTable th {
-    background-color: #f2f2f2; /* Çì´õ ¹è°æ»ö ¼³Á¤ */
-}
-
-/*# sourceMappingURL=style.css.map */

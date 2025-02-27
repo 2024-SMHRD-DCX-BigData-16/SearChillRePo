@@ -52,7 +52,7 @@
 	<h1>습득물 조회 결과</h1>
 
 	<!-- 세부 정보 테이블 -->
-	<table id="detailTable" class="table table-bordered" border="1px" style="display: none;">
+	<table id="detailTable" border="1px" style="display: none;">
 		<thead>
 			<tr>
 				<th>이미지</th>
@@ -61,7 +61,7 @@
 				<th width="115px">습득 날짜
 					<button onclick="sortTableByDate()" style="
     padding-left: 2px;
-    padding-right: 2px;
+    padding-right: 2px; color: black;
 					">⇅</button>
 				</th>
 				<th>전화번호</th>
@@ -95,8 +95,8 @@
 <form action="submitAddress">
 <input type="text" name="roadAddress" value="${sessionScope.mapAddress.roadAddress}" style="display: none">
 <input type="text" name="jibunAddress" value="${sessionScope.mapAddress.jibunAddress}" style="display: none">
-<input type="text" name="pageNo" size="1">
-<input type="submit" value="이동">
+<input style="color: black;" type="text" name="pageNo" size="1">
+<input style="color: black;" type="submit" value="이동">
 </form>
 
 </div>

@@ -50,13 +50,12 @@
 										<c:if test="${loginuser != null}">
 											<p>
 												<a class="btn btn-primary btn-demo popup-vimeo"
-													href="logout">Logout</a> <a
+													href="logout">Logout→</a> <a
 													class="btn btn-primary btn-demo popup-vimeo"
 													href="updateUser">Edit Profile</a>
 											</p>
 
-											<h1 style="font: white">${loginuser.mem_id }
-												${alarmCheck }</h1>
+											
 										</c:if>
 										<!-- 비회원 -->
 										<c:if test="${loginuser == null}">

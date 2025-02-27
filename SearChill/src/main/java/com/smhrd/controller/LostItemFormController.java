@@ -219,6 +219,8 @@ public class LostItemFormController {
     		List<Lostitem> lostItemList = lostitemFormMapper.myLostItemNotice(mem_id);
     		session.setAttribute("myLostItemList", lostItemList);
     		memberMapper.resetMemberAlarm(mem_id);
+			session.setAttribute("alarmCheck", "0");
+
 		}
     	
     	return "MyLostItemNotice";
