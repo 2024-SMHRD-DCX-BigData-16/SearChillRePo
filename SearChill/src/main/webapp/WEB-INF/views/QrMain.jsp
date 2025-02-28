@@ -188,7 +188,7 @@
 
     <canvas id="myCanvas_card"></canvas>
     <a id="down_btn_canvas_card" href="" download="qrcode_combined_card.png">
-        <button>다운로드 (명함)</button>
+        <button>다운로드</button>
     </a>
 </div>
 

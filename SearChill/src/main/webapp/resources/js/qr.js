@@ -68,8 +68,8 @@
 
 					centerImageCard.onload = function() {
 						// 중심 이미지 크기를 명함 사이즈에 맞춰 조절 (예: 1/2 크기로 축소)
-						var centerImageWidth = centerImageCard.width *(4/5);
-						var centerImageHeight = centerImageCard.height *(4/5);
+						var centerImageWidth = centerImageCard.width *(3/5);
+						var centerImageHeight = centerImageCard.height *(3/5);
 
 						// QR 코드를 캔버스 왼쪽에 거의 붙여서 배치 (centerX 값을 조정)
 						var centerX = canvasCard.width - centerImageWidth - 20; // 오른쪽 여백 10px (원하는 여백 값으로 조절 가능)
