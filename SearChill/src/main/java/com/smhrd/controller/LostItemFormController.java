@@ -1,12 +1,9 @@
 package com.smhrd.controller;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,234 +12,145 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.smhrd.entity.Lostitem;
 import com.smhrd.entity.Member;
 import com.smhrd.mapper.LostitemFormMapper;
 import com.smhrd.mapper.MemberMapper;
+import com.smhrd.service.EmailService;
 
 @Controller
 public class LostItemFormController {
-	
-	@Autowired
-	private MemberMapper memberMapper;
+
+    @Autowired
+    private MemberMapper memberMapper;
 
     @Autowired
     private LostitemFormMapper lostitemFormMapper;
-        
+    
+    private final EmailService emailService;
+
+    @Autowired
+    public LostItemFormController(EmailService emailService) {
+        this.emailService = emailService;
+    }
+    
     @GetMapping("/qrScan/lostItemForm")
     public String lostItemForm(@RequestParam("mem_id") String mem_id) {
         return "LostItemForm";
     }
-    
+
     @GetMapping("/lostItemForm")
     public String lostItemForm() {
-    	return "LostItemForm";
+        return "LostItemForm";
     }
-    
+
     @RequestMapping("/goSaveLostItem")
     public String goSaveLostItem() {
-    	return "SaveLostItem";
+        return "SaveLostItem";
     }
-    
+
     @PostMapping("/deleteLostItem")
     public String deleteLostItem(@RequestParam("object_idx") String object_idx) {
-    	
-    	lostitemFormMapper.deleteLostItem(object_idx);
-    	
-    	return "redirect:/myLostItemNotice";
+        lostitemFormMapper.deleteLostItem(object_idx);
+        return "redirect:/myLostItemNotice";
     }
-    
-    // 스캔없이 페이지 접속하고 분실물 저장
-    // mem_id가 null값
+
     @PostMapping("/saveLostItem")
     public String saveLostItem(Lostitem lostitem, HttpServletRequest request) {
+        try {
+            MultipartRequest multi = new MultipartRequest(request, request.getRealPath("resources/objectImages"),
+                    1024 * 1024 * 10, "UTF-8", new DefaultFileRenamePolicy());
+
+            lostitem.setObject_photo(multi.getFilesystemName("object_photo"));
+            lostitem.setObject_name(multi.getParameter("object_name"));
+            lostitem.setObject_scan_loc(multi.getParameter("object_scan_loc"));
+            lostitem.setObject_keeping_place(multi.getParameter("object_keeping_place"));
+            lostitem.setObject_keeping_place_info(multi.getParameter("object_keeping_place_info"));
+            lostitem.setMem_id(multi.getParameter("mem_id"));
+            lostitem.setNotice_msg(multi.getParameter("notice_msg"));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        int result = lostitemFormMapper.insertLostitem(lostitem);
         
-		// 파일 업로드를 위한 객체 : MultipartRequest
-		MultipartRequest multi = null;
-		
-        // 1. 요청객체(request)
-        // 2. 파일을 저장할 폴더의 경로 (절대 경로 대신 상대 경로로 접근)
-		
-		try {
-			// 1. 요청객체(request)
-			// 2. 파일을 저장할 폴더의 경로(String)
-			String savePath = request.getRealPath("resources/objectImages");
-			System.out.println(savePath);
-			// 3. 허용 용량 크기(int)
-			int maxSize = 1024*1024*10; // 10MB
-			// 4. 파일 이름의 인코딩 방식
-			String encoding = "UTF-8";
-			// 5. 중복이름 제거(DefaultfileRenamePolicy)
-			DefaultFileRenamePolicy dfrp = new DefaultFileRenamePolicy();
-			multi = new MultipartRequest(request, savePath, maxSize, encoding, dfrp);
-			
-			// 파일이름 가져오기
-			String object_photo = multi.getFilesystemName("object_photo");
-			
-			lostitem.setObject_photo(object_photo);
-
-			// 나머지 설정
-			String object_name = multi.getParameter("object_name");
-			String object_scan_loc = multi.getParameter("object_scan_loc");
-			String object_keeping_place = multi.getParameter("object_keeping_place");
-			String object_keeping_place_info = multi.getParameter("object_keeping_place_info");
-			String mem_id = multi.getParameter("mem_id");
-			String object_scan_loc_lat = multi.getParameter("object_scan_loc_lat");
-			String object_scan_loc_lon = multi.getParameter("object_scan_loc_lon");
-			String object_keeping_place_lat = multi.getParameter("object_keeping_place_lat");
-			String object_keeping_place_lon = multi.getParameter("object_keeping_place_lon");
-			String notice_msg = multi.getParameter("notice_msg");
-
-			lostitem.setObject_name(object_name);
-			lostitem.setObject_scan_loc(object_scan_loc);
-			lostitem.setObject_photo(object_photo);
-			lostitem.setObject_keeping_place(object_keeping_place);
-			lostitem.setObject_keeping_place_info(object_keeping_place_info);
-			lostitem.setMem_id(mem_id);
-			lostitem.setObject_scan_loc_lat(object_scan_loc_lat);
-			lostitem.setObject_scan_loc_lon(object_scan_loc_lon);
-			lostitem.setObject_keeping_place_lat(object_keeping_place_lat);
-			lostitem.setObject_keeping_place_lon(object_keeping_place_lon);
-			lostitem.setNotice_msg(notice_msg);
-			
-			
-			System.out.println(lostitem.toString());
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
-    	System.out.println(lostitem.toString());
-    	
-    	int result = lostitemFormMapper.insertLostitem(lostitem);
-    	
-    	if(result != 0) {
-    		return "redirect:/goSaveLostItem"; // 성공 페이지
-    	}else {
-    		System.out.println("분실물 데이터 전송 실패");
-    		return "redirect:/main"; // 실패    		
-    	}
-    	
+        if (result != 0) {
+            return "redirect:/goSaveLostItem";
+        } else {
+            return "redirect:/main";
+        }
     }
     
-    
     @PostMapping("/qrScan/saveLostItem")
-    public String saveLostItemScan(Lostitem lostitem, HttpServletRequest request) {
-    	
-    	// 파일 업로드를 위한 객체 : MultipartRequest
-    	MultipartRequest multi = null;
-    	
-    	// 1. 요청객체(request)
-    	// 2. 파일을 저장할 폴더의 경로 (절대 경로 대신 상대 경로로 접근)
-    	
+    public String saveLostItemScan(Lostitem lostitem, HttpServletRequest request, HttpSession session) {
     	try {
-    		// 1. 요청객체(request)
-    		// 2. 파일을 저장할 폴더의 경로(String)
-    		String savePath = request.getRealPath("resources/objectImages");
-    		System.out.println(savePath);
-    		// 3. 허용 용량 크기(int)
-    		int maxSize = 1024*1024*10; // 10MB
-    		// 4. 파일 이름의 인코딩 방식
-    		String encoding = "UTF-8";
-    		// 5. 중복이름 제거(DefaultfileRenamePolicy)
-    		DefaultFileRenamePolicy dfrp = new DefaultFileRenamePolicy();
-    		multi = new MultipartRequest(request, savePath, maxSize, encoding, dfrp);
+    		MultipartRequest multi = new MultipartRequest(request, request.getRealPath("resources/objectImages"),
+    				1024 * 1024 * 10, "UTF-8", new DefaultFileRenamePolicy());
     		
-    		// 파일이름 가져오기
-    		String object_photo = multi.getFilesystemName("object_photo");
-    		
-    		lostitem.setObject_photo(object_photo);
-    		
-    		// 나머지 설정
-    		String object_name = multi.getParameter("object_name");
-    		String object_scan_loc = multi.getParameter("object_scan_loc");
-    		String object_keeping_place = multi.getParameter("object_keeping_place");
-    		String object_keeping_place_info = multi.getParameter("object_keeping_place_info");
-    		String mem_id = multi.getParameter("mem_id");
-    		String object_scan_loc_lat = multi.getParameter("object_scan_loc_lat");
-    		String object_scan_loc_lon = multi.getParameter("object_scan_loc_lon");
-    		String object_keeping_place_lat = multi.getParameter("object_keeping_place_lat");
-    		String object_keeping_place_lon = multi.getParameter("object_keeping_place_lon");
-    		String notice_msg = multi.getParameter("notice_msg");
-    		
-    		lostitem.setObject_name(object_name);
-    		lostitem.setObject_scan_loc(object_scan_loc);
-    		lostitem.setObject_photo(object_photo);
-    		lostitem.setObject_keeping_place(object_keeping_place);
-    		lostitem.setObject_keeping_place_info(object_keeping_place_info);
-    		lostitem.setMem_id(mem_id);
-    		lostitem.setObject_scan_loc_lat(object_scan_loc_lat);
-    		lostitem.setObject_scan_loc_lon(object_scan_loc_lon);
-    		lostitem.setObject_keeping_place_lat(object_keeping_place_lat);
-    		lostitem.setObject_keeping_place_lon(object_keeping_place_lon);
-    		lostitem.setNotice_msg(notice_msg);
-    		
-    		
-    		System.out.println(lostitem.toString());
+    		lostitem.setObject_photo(multi.getFilesystemName("object_photo"));
+    		lostitem.setObject_name(multi.getParameter("object_name"));
+    		lostitem.setObject_scan_loc(multi.getParameter("object_scan_loc"));
+    		lostitem.setObject_keeping_place(multi.getParameter("object_keeping_place"));
+    		lostitem.setObject_keeping_place_info(multi.getParameter("object_keeping_place_info"));
+    		lostitem.setMem_id(multi.getParameter("mem_id"));
+    		lostitem.setNotice_msg(multi.getParameter("notice_msg"));
     		
     	} catch (IOException e) {
-    		// TODO Auto-generated catch block
     		e.printStackTrace();
     	}
     	
-    	System.out.println(lostitem.toString());
-    	
     	int result = lostitemFormMapper.insertLostitem(lostitem);
     	
-    	if(result != 0) {
-    		//
+    	if (result != 0) {
+    		// Alarm 업데이트
 			memberMapper.updateMemberAlarm(lostitem.getMem_id());
-
-    		return "redirect:/goSaveLostItem"; // 성공 페이지
-    	}else {
-    		System.out.println("분실물 데이터 전송 실패");
-    		return "redirect:/main"; // 실패    		
+			
+			// 로그인한 상태면 본인 alarm 확인
+			Member loginuser = (Member) session.getAttribute("loginuser");
+	    	if(loginuser != null) {
+	    		
+	    		String loginuser_mem_id = loginuser.getMem_id();
+	    		
+	    		String alarmCheck = memberMapper.alarmSelectOne(loginuser_mem_id);
+	    		
+	    		session.setAttribute("alarmCheck", alarmCheck);
+	    	}
+	    	
+	    	// email 보내기
+    		String registeredEmail = lostitemFormMapper.findEmailByMemId(lostitem.getMem_id());
+    		if (registeredEmail != null) {
+    			emailService.sendLostItemNotification(registeredEmail, lostitem.getObject_name(), lostitem.getObject_keeping_place());
+    		}
+    		return "redirect:/goSaveLostItem?success=true";
+    	} else {
+    		return "redirect:/main";
     	}
-    	
     }
-    
-   
-    
+
     @RequestMapping("/myLostItemNotice")
     public String myLostItemNotice(HttpSession session) {
-    	Member loginuser = (Member) session.getAttribute("loginuser");
-    	System.out.println(loginuser.toString());
-    	
-    	if (loginuser != null) {
-    		String mem_id = loginuser.getMem_id();
-    		
-    		System.out.println(mem_id);
-    		List<Lostitem> lostItemList = lostitemFormMapper.myLostItemNotice(mem_id);
-    		session.setAttribute("myLostItemList", lostItemList);
-    		memberMapper.resetMemberAlarm(mem_id);
-			session.setAttribute("alarmCheck", "0");
-
-		}
-    	
-    	return "MyLostItemNotice";
+        Member loginuser = (Member) session.getAttribute("loginuser");
+        if (loginuser != null) {
+            List<Lostitem> lostItemList = lostitemFormMapper.myLostItemNotice(loginuser.getMem_id());
+            session.setAttribute("myLostItemList", lostItemList);
+            memberMapper.resetMemberAlarm(loginuser.getMem_id());
+            session.setAttribute("alarmCheck", "0");
+        }
+        return "MyLostItemNotice";
     }
 
     @RequestMapping("/qrScan/myLostItemNotice")
     public String myLostItemNoticeScan() {
-    	    	
-    	return "redirect:/myLostItemNotice";
+        return "redirect:/myLostItemNotice";
     }
-    
-    
-    // select
-	@RequestMapping("/lostitemList")
-	public @ResponseBody List<Lostitem> showMember(Model model) {
-		List<Lostitem> lostitemList = lostitemFormMapper.getLostitemIsNull();
-		model.addAttribute("lostitemList", lostitemList);
-		
-//		System.out.println(lostitemList.toString());
-		
-		return lostitemList;
-	}
 
-    
+    @RequestMapping("/lostitemList")
+    public @ResponseBody List<Lostitem> showMember(Model model) {
+        List<Lostitem> lostitemList = lostitemFormMapper.getLostitemIsNull();
+        model.addAttribute("lostitemList", lostitemList);
+        return lostitemList;
+    }
 }

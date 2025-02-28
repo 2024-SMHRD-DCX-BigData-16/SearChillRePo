@@ -230,24 +230,18 @@ figure figcaption {
 	white-space: nowrap; /* 줄바꿈 방지 */
 }
 
-
-
-
-
-/* 돋보기 아이콘 스타일 */
 /* 돋보기 아이콘 스타일 */
 #search-icon {
-    width: 160px; /* 크기 키움 */
+    width: 190px; /* 크기 키움 */
     height: auto;
     opacity: 0; /* 처음에는 숨김 */
     display: inline-block;
     position: absolute;
     top: -30px; /* "L" 위로 조금 이동 */
-    right: -70px; /* "L"과 더 겹치도록 조정 */
+    right: -40px; /* "L"과 더 겹치도록 조정 */
     animation: fadeInZoom 1.8s ease-in-out 1.5s forwards; 
     /* 1.5초 뒤에 나타나도록 */
 }
-
 /* 돋보기 애니메이션 */
 @keyframes fadeInZoom {
     0% {

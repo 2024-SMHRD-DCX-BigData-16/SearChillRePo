@@ -26,4 +26,20 @@ xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/
    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
       <property name="dataSource" ref="dataSource" />
    </bean>
+   <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+    <property name="host" value="smtp.naver.com"/>
+    <property name="port" value="587"/>
+    <property name="username" value="thkjds7173@naver.com"/>
+    <property name="password" value="HMTGDKGHK94M"/>
+    <property name="javaMailProperties">
+        <props>
+            <prop key="mail.transport.protocol">smtp</prop>
+            <prop key="mail.smtp.auth">true</prop>
+            <prop key="mail.smtp.starttls.enable">true</prop>
+            <prop key="mail.smtp.ssl.trust">smtp.naver.com</prop>
+            <prop key="mail.debug">true</prop>
+        </props>
+    </property>
+</bean>
+   
 </beans>

@@ -17,6 +17,6 @@ public interface LostitemFormMapper {
 
 	public void deleteLostItem(String object_idx);
 
-    
+	public String findEmailByMemId(String mem_id);
     
 }
