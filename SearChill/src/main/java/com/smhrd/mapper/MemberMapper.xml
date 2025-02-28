@@ -32,7 +32,7 @@
 	<update id="memberUpdate"
 		parameterType="com.smhrd.entity.Member">
 		update tb_member set mem_pw = #{mem_pw}, mem_name =
-		#{mem_name}, mem_phone=#{mem_phone},mem_phone_open=#{mem_phone_open}
+		#{mem_name}, mem_email=#{mem_email}, mem_phone=#{mem_phone}, mem_phone_open=#{mem_phone_open}
 		where mem_id=#{mem_id}
 	</update>
 

@@ -178,7 +178,7 @@ public class MemberController {
 	    String mem_id = loginMember.getMem_id();
 
 	    
-	    Member member = new Member(mem_id, mem_pw, mem_email, mem_name, mem_phone, mem_phone_open);
+	    Member member = new Member(mem_id, mem_pw, mem_phone, mem_email, mem_name, mem_phone_open);
 	   
 	    int result = MemberMapper.memberUpdate(member);
 
