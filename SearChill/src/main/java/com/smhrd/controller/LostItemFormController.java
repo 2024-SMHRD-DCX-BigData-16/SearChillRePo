@@ -69,8 +69,13 @@ public class LostItemFormController {
             lostitem.setObject_keeping_place(multi.getParameter("object_keeping_place"));
             lostitem.setObject_keeping_place_info(multi.getParameter("object_keeping_place_info"));
             lostitem.setMem_id(multi.getParameter("mem_id"));
+			lostitem.setObject_scan_loc_lat(multi.getParameter("object_scan_loc_lat"));
+			lostitem.setObject_scan_loc_lon(multi.getParameter("object_scan_loc_lon"));
+			lostitem.setObject_keeping_place_lat(multi.getParameter("object_keeping_place_lat"));
+			lostitem.setObject_keeping_place_lon(multi.getParameter("object_keeping_place_lon"));
             lostitem.setNotice_msg(multi.getParameter("notice_msg"));
 
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,6 +101,10 @@ public class LostItemFormController {
     		lostitem.setObject_keeping_place(multi.getParameter("object_keeping_place"));
     		lostitem.setObject_keeping_place_info(multi.getParameter("object_keeping_place_info"));
     		lostitem.setMem_id(multi.getParameter("mem_id"));
+			lostitem.setObject_scan_loc_lat(multi.getParameter("object_scan_loc_lat"));
+			lostitem.setObject_scan_loc_lon(multi.getParameter("object_scan_loc_lon"));
+			lostitem.setObject_keeping_place_lat(multi.getParameter("object_keeping_place_lat"));
+			lostitem.setObject_keeping_place_lon(multi.getParameter("object_keeping_place_lon"));
     		lostitem.setNotice_msg(multi.getParameter("notice_msg"));
     		
     	} catch (IOException e) {
