@@ -234,8 +234,8 @@ h1 {
         <tr>
             <th>이미지</th>
             <th>물품명</th>
-            <th width="85px">보관 장소</th>
-            <th width="115px">습득 날짜
+            <th width="120px">보관 장소</th>
+            <th width="120px">습득 날짜
                 <button class="sort-btn" onclick="sortTableByDate()">⇅</button>
             </th>
             <th>전화번호</th>
