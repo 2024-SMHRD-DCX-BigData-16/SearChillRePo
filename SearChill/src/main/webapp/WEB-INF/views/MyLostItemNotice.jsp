@@ -10,14 +10,15 @@
 <link rel="stylesheet" href="resources/css/table.css">
 <style>
 /* ✅ 테이블 제목 스타일 */
- .table-title {
-        text-align: center; /* ✅ 가운데 정렬 */
-        font-size: 30px; /* ✅ 글씨 크기 확대 */
-        font-weight: bold; /* ✅ 굵게 */
-        text-transform: uppercase; /* ✅ 대문자로 변환 */
-        color: white; /* ✅ 테이블과 어울리도록 유지 */
-        margin-bottom: 20px; /* ✅ 테이블과 간격 조정 */
-        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /*
+.table-title {
+	text-align: center; /* ✅ 가운데 정렬 */
+	font-size: 30px; /* ✅ 글씨 크기 확대 */
+	font-weight: bold; /* ✅ 굵게 */
+	text-transform: uppercase; /* ✅ 대문자로 변환 */
+	color: white; /* ✅ 테이블과 어울리도록 유지 */
+	margin-bottom: 20px; /* ✅ 테이블과 간격 조정 */
+	text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.1);
+	margin-bottom: 25px;
 }
 </style>
 </head>
@@ -35,7 +36,7 @@
 						<!-- 내용 -->
 
 						<!-- ✅ 테이블 제목 -->
-						<div class="table-title">${loginuser.mem_id}님의 QR코드로 등록된 분실물
+						<div class="table-title">${loginuser.mem_id} 님을 기다리고 있어요 ☹︎
 						</div>
 
 

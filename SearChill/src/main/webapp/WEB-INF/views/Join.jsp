@@ -45,7 +45,7 @@ prefix="c"%>
               required
             />
             <button type="button" class="check-btn" onclick="IDCheck()">
-              ID 중복체크
+              ✔ID 중복체크
             </button>
           </div>
           <!-- ✅ ID 중복 확인 결과를 별도 텍스트로 표시 -->

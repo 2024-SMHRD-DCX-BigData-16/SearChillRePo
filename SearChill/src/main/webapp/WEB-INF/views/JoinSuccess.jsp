@@ -59,7 +59,7 @@
             justify-content: flex-start; /* ✅ 최상단 정렬 */
             align-items: center; /* ✅ 중앙 정렬 */
             text-align: center;
-            font-size: 18px; /* ✅ 글씨 크기 조정 */
+            font-size: 19px; /* ✅ 글씨 크기 조정 */
             font-weight: 500;
             color: #111; /* ✅ 가독성 좋은 색상 */
             line-height: 1.4;
@@ -82,7 +82,7 @@
             cursor: pointer;
             transition: all 0.3s ease-in-out;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-            margin-top: 5px; /* ✅ 버튼 위치를 최소한으로 조정 */
+            margin-top: 3px; /* ✅ 버튼 위치를 최소한으로 조정 */
         }
 
         .login-button:hover {
@@ -120,10 +120,10 @@
                     <div class="bubble-text">
                         <p>
                             이제 <strong>SearChill</strong>을 통해 <br> 
-                            <span class="highlight">부담없이 QR 코드를 발급</span>하고 물건에 부착하세요! <br> 
-                            만약 물건을 잃어버려도 <span class="highlight">분실물 센터나 습득자가 쉽게 연락</span>할 수 있습니다. <br> 
-                            또한, <span class="highlight">지도를 통해 분실물 센터에 보관 중인 분실물</span>을 쉽게 확인하고 <br> 
-                            빠르게 되찾을 수 있도록 도와드립니다.
+                             부담없이 <span class="highlight"> QR 코드를 발급</span>하고 물건에 부착하세요! <br> 
+                            만약 물건을 잃어버려도 <span class="highlight">분실물 센터나 습득자가 쉽게 연락</span><br>할 수 있습니다. <br> 
+                            또한, <span class="highlight">지도를 통해 분실물 센터에 보관 중인 분실물</span>을 <br>확인하고  
+                            빠르게 되찾을 수 있도록 도와드립니다!<br>"Good Luck!" 😊🍀
                         </p>
 
                         <!-- ✅ 로그인 버튼도 말풍선 내부에 포함 -->

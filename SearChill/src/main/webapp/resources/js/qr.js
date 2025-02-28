@@ -22,7 +22,7 @@
 
 					centerImage.onload = function() {
 						// 중심 이미지 크기를 3/5로 축소 (기존 2/3 에서 3/5 로 변경)
-						var centerImageWidth = centerImage.width * (3/5);
+						var centerImageWidth = centerImage.width;
 						var centerImageHeight = centerImage.height * (3/5);
 
 						var centerX = (canvas.width - centerImageWidth) / 2;

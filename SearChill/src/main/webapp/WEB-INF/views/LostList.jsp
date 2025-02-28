@@ -13,11 +13,11 @@
 <style>
 /* ✅ "습득물 조회 결과" 제목 스타일 */
 h1 {
-    font-size: 28px; /* 제목 크기 */
+    font-size: 35px; /* 제목 크기 */
     font-weight: bold;
     text-align: center;
     color: white;
-    background: rgba(255, 255, 255, 0.1); /* 반투명 배경 */
+    background:transparent /* 반투명 배경 */
     padding: 15px;
     border-radius: 10px;
     backdrop-filter: blur(5px); /* 블러 효과 */
@@ -184,10 +184,10 @@ h1 {
     width: 100%;
     text-align: center;
     padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 24px;
     color: white;
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.4);
     margin-top: 20px;
 }
 
@@ -264,20 +264,19 @@ h1 {
 <% }
 %>
 </ul>
-<div style="display: inline;">
-<form action="submitAddress">
-<input type="text" name="roadAddress" value="${sessionScope.mapAddress.roadAddress}" style="display: none">
-<input type="text" name="jibunAddress" value="${sessionScope.mapAddress.jibunAddress}" style="display: none">
-<input type="text" name="pageNo" size="1">
-<input type="submit" value="이동">
-</form>
+<div style="text-align:center; margin-top: 10px;">
+    <form action="submitAddress">
+        <input type="text" name="roadAddress" value="${sessionScope.mapAddress.roadAddress}" style="display: none">
+        <input type="text" name="jibunAddress" value="${sessionScope.mapAddress.jibunAddress}" style="display: none">
+        <input type="text" name="pageNo" size="1">
+        <input type="submit" value="이동">
+    </form>
 
 </div>
 
 </div>
 
-	<h3 id="lostNotice" style="display: none;">분실하신 분께서는 본인을 증명할 수 있는
-		서류를 지참하시어 보관중으로 기재되어 있는 기관에 방문하시어 보관물품을 수령하시기 바랍니다.</h3>
+	<h3 id="lostNotice" style="display: none;">분실자는 신분을 증명할 수 있는 서류를 지참하고 보관 기관을 방문하여<br>물품을 수령하시기 바랍니다❕</h3>
 
 						<!-- 내용끝 -->
 
