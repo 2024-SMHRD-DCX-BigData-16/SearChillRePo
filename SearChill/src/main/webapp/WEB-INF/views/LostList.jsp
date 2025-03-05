@@ -532,7 +532,6 @@ h1 {
 			document.getElementById("loading").style.display = "none";
 			document.getElementById("detailTable").style.display = "table";
 			document.getElementById("lostNotice").style.display = "block";
-
 		}
 
 		// 습득 날짜순 정렬 함수
