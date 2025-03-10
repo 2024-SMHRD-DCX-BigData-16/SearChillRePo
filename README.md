@@ -82,7 +82,7 @@
 ![습득물 정보 페이지](https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff)
 
 ### 습득물 조회 페이지
-![습득물 조회 페이지](https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27)
+![image](https://github.com/user-attachments/assets/254b4089-c7aa-462e-a2e0-c85c3e3f2821)
 
 ---
 
