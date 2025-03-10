@@ -78,7 +78,6 @@
   <tr>
     <td align="center">
       <strong>QR 다운로드 페이지</strong><br>
-      ![image](https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1)
 
       <img src="https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1" width="500px" height="800px">
     </td>
@@ -92,7 +91,7 @@
     <td align="center">
       <strong>습득물 정보 페이지</strong><br>
 
-      <img src="https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff" width="700px" height="500px">
+      <img src="https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1" width="700px" height="500px">
     </td>
     <td align="center">
       <strong>습득물 조회 페이지</strong><br>
