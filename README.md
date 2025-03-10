@@ -24,6 +24,7 @@ SearChill
 ![image](https://github.com/user-attachments/assets/1c385605-f3ba-43c4-bd9b-2e6a099b7bb7)
 
 er다이어그램
+
 ![image](https://github.com/user-attachments/assets/d01cdb93-e93e-4656-b546-8a2572a15969)
 
 웹 페이지 이미지
