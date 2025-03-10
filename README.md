@@ -73,11 +73,18 @@
 ### 메인 페이지
 <img src="https://github.com/user-attachments/assets/25e095ac-a792-4f1a-aa2d-4fc019652567" width="700px">
 
-### QR 다운로드 페이지
-<img src="https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae" width="700px">
-
-### 습득물 등록 페이지
-<img src="https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db" width="700px">
+<table>
+  <tr>
+    <td align="center">
+      <strong>QR 다운로드 페이지</strong><br>
+      <img src="https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae" width="500px">
+    </td>
+    <td align="center">
+      <strong>습득물 등록 페이지</strong><br>
+      <img src="https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db" width="500px">
+    </td>
+  </tr>
+</table>
 
 ### 습득물 정보 페이지
 <img src="https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff" width="700px">
