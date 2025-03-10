@@ -86,11 +86,18 @@
   </tr>
 </table>
 
-### 습득물 정보 페이지
-<img src="https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff" width="700px">
-
-### 습득물 조회 페이지
-<img src="https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27" width="700px">
+<table>
+  <tr>
+    <td align="center">
+      <strong>습득물 정보 페이지</strong><br>
+      <img src="https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff" width="700px">
+    </td>
+    <td align="center">
+      <strong>습득물 조회 페이지</strong><br>
+      <img src="https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27" width="700px">
+    </td>
+  </tr>
+</table>
 
 
 ---
