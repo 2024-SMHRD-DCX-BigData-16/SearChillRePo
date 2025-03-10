@@ -88,11 +88,11 @@
   <tr>
     <td align="center">
       <strong>습득물 정보 페이지</strong><br>
-      <img src="https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1" width="700px" height="500px">
+      <img src="![image](https://github.com/user-attachments/assets/838f78c3-eb68-420d-bf3b-c9abb62f0aa0)" width="700px" height="500px">
     </td>
     <td align="center">
       <strong>습득물 조회 페이지</strong><br>
-      <img src="https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27" width="700px" height="500px">
+      <img src="![image](https://github.com/user-attachments/assets/78037a9f-c7d4-436e-8269-08bd6eba24a3)" width="700px" height="500px">
     </td>
   </tr>
 </table>
