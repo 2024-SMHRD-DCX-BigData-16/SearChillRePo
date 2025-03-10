@@ -67,6 +67,7 @@
 <img src="https://github.com/user-attachments/assets/d01cdb93-e93e-4656-b546-8a2572a15969" width="600px">
 
 ---
+      ![image](https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1)
 
 ## 🌐 웹 페이지 미리보기
 
