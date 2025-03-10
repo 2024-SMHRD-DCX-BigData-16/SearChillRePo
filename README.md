@@ -88,6 +88,7 @@
   <tr>
     <td align="center">
       <strong>습득물 정보 페이지</strong><br>
+
       <img src="https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff" width="700px" height="500px">
     </td>
     <td align="center">
@@ -97,7 +98,7 @@
   </tr>
 </table>
 
-
+https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff
 ---
 
 ## 🚨 트러블슈팅
