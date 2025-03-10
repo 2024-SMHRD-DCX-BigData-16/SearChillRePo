@@ -1,15 +1,27 @@
 프로젝트명
+SearChill
 
 프로젝트 개요
 
+
 페르소나랑 기타 등등
+
 
 주요기능
 
+
 기술스택
 사용언어, 라이브러리등
+- **언어**: Java(JDK1.8), JavaScript, Python
+- **개발 도구**: STS, vscode, Colab, Jupyter
+- **프레임워크 및 라이브러리**: Spring, Bootstrap, MyBatis, ZXing, Selenium, Pandas, Numpy, Matplotlib
+- **서버 환경**: Apache Tomcat
+- **데이터베이스**: MySQL
+- **버전 관리 및 협업**: GitHub, Notion
+- **API 활용**: 경찰청 API, Naver Works Mail API, Kakao Map API
 
 유스케이스
+![image](https://github.com/user-attachments/assets/1c385605-f3ba-43c4-bd9b-2e6a099b7bb7)
 
 er다이어그램
 
