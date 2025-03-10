@@ -39,14 +39,23 @@ er다이어그램
 웹 페이지 이미지
 
 메인
+
 ![image](https://github.com/user-attachments/assets/25e095ac-a792-4f1a-aa2d-4fc019652567)
+
 QR다운로드
+
 ![image](https://github.com/user-attachments/assets/a74d9bec-48f1-4cd8-bfe1-f3f2c1bb047e)
+
 습득물 등록
+
 ![image](https://github.com/user-attachments/assets/692a70cc-432c-4eee-abe6-d2928341cc74)
+
 습득물 정보
+
 ![image](https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff)
+
 습득물 조회
+
 ![image](https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27)
 
 
