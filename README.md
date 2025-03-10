@@ -48,7 +48,7 @@ QR다운로드
 
 습득물 등록
 
-![image](https://github.com/user-attachments/assets/692a70cc-432c-4eee-abe6-d2928341cc74)
+![image](https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db)
 
 습득물 정보
 
