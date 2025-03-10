@@ -71,7 +71,7 @@ er다이어그램
 
 QR다운로드
 
-![image](https://github.com/user-attachments/assets/a74d9bec-48f1-4cd8-bfe1-f3f2c1bb047e)
+![image](https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae)
 
 습득물 등록
 
