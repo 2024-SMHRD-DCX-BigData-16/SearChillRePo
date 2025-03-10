@@ -77,7 +77,9 @@
   <tr>
     <td align="center">
       <strong>QR 다운로드 페이지</strong><br>
-      <img src="https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae" width="500px" height="800px">
+      ![image](https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1)
+
+      <img src="https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1" width="500px" height="800px">
     </td>
     <td align="center">
       <strong>습득물 등록 페이지</strong><br>
