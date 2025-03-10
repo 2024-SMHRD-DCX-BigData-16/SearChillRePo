@@ -67,7 +67,6 @@
 <img src="https://github.com/user-attachments/assets/d01cdb93-e93e-4656-b546-8a2572a15969" width="600px">
 
 ---
-      ![image](https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1)
 
 ## 🌐 웹 페이지 미리보기
 
@@ -91,7 +90,7 @@
     <td align="center">
       <strong>습득물 정보 페이지</strong><br>
 
-      <img src="https://github.com/user-attachments/assets/804f598c-2cf1-4be6-bf7f-0f6cbec825e1" width="700px" height="500px">
+      <img src="https://github.com/user-attachments/assets/f3d4a2c8-7b8d-4fba-bc63-2942665b078e" width="700px" height="500px">
     </td>
     <td align="center">
       <strong>습득물 조회 페이지</strong><br>
