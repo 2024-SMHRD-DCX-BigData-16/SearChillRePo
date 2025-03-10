@@ -58,32 +58,33 @@
 
 ## 📑 유스케이스 다이어그램
 
-![유스케이스 다이어그램](https://github.com/user-attachments/assets/1c385605-f3ba-43c4-bd9b-2e6a099b7bb7)
+<img src="https://github.com/user-attachments/assets/1c385605-f3ba-43c4-bd9b-2e6a099b7bb7" width="600px">
 
 ---
 
 ## 📊 ER 다이어그램
 
-![ER 다이어그램](https://github.com/user-attachments/assets/d01cdb93-e93e-4656-b546-8a2572a15969)
+<img src="https://github.com/user-attachments/assets/d01cdb93-e93e-4656-b546-8a2572a15969" width="600px">
 
 ---
 
 ## 🌐 웹 페이지 미리보기
 
 ### 메인 페이지
-![메인 페이지](https://github.com/user-attachments/assets/25e095ac-a792-4f1a-aa2d-4fc019652567)
+<img src="https://github.com/user-attachments/assets/25e095ac-a792-4f1a-aa2d-4fc019652567" width="700px">
 
 ### QR 다운로드 페이지
-![QR 다운로드 페이지](https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae)
+<img src="https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae" width="700px">
 
 ### 습득물 등록 페이지
-![습득물 등록 페이지](https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db)
+<img src="https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db" width="700px">
 
 ### 습득물 정보 페이지
-![습득물 정보 페이지](https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff)
+<img src="https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff" width="700px">
 
 ### 습득물 조회 페이지
-![image](https://github.com/user-attachments/assets/254b4089-c7aa-462e-a2e0-c85c3e3f2821)
+<img src="https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27" width="700px">
+
 
 ---
 
@@ -103,9 +104,11 @@
 
 ---
 
+
 ## 🙋 팀원 역할 분담
 
-![팀원 역할 분담](https://github.com/user-attachments/assets/f242b5a2-418b-416d-b4fb-9b338c67516f)
+<img src="https://github.com/user-attachments/assets/f242b5a2-418b-416d-b4fb-9b338c67516f" width="600px">
+
 
 ---
 
