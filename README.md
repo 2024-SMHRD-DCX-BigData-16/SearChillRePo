@@ -84,9 +84,7 @@
       <img src="https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db" width="500px" height="800px">
     </td>
   </tr>
-</table>
 
-<table>
   <tr>
     <td align="center">
       <strong>습득물 정보 페이지</strong><br>
