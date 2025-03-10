@@ -77,11 +77,11 @@
   <tr>
     <td align="center">
       <strong>QR 다운로드 페이지</strong><br>
-      <img src="https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae" width="500px" height="auto">
+      <img src="https://github.com/user-attachments/assets/6315c7fd-43b0-46e4-97d7-7b53211b48ae" width="500px" height="700px">
     </td>
     <td align="center">
       <strong>습득물 등록 페이지</strong><br>
-      <img src="https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db" width="500px" height="auto">
+      <img src="https://github.com/user-attachments/assets/0e4b98fa-e361-41e0-8dc2-c4963a2aa9db" width="500px" height="700px">
     </td>
   </tr>
 </table>
