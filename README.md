@@ -4,11 +4,19 @@ SearChill
 
 프로젝트 개요
 
+주제: QR 코드 기반 분실물 찾기 서비스 및 경찰청 API 기반 분실물 등록 현황 지도 웹서비스
+
+- QR 코드를 통해 분실물 정보 등록 시 알림 발송 서비스
+- Kakao Map API와 경찰철 API를 통해 위치기반 분실물 등록 현황을 확인할 수 있는 서비스
+- 회원 ID를 통해 고유 QR코드를 발급해주는 서비스
 
 페르소나랑 기타 등등
 
-
 주요기능
+
+
+
+
 
 
 기술스택
@@ -29,7 +37,18 @@ er다이어그램
 ![image](https://github.com/user-attachments/assets/d01cdb93-e93e-4656-b546-8a2572a15969)
 
 웹 페이지 이미지
+
+메인
 ![image](https://github.com/user-attachments/assets/25e095ac-a792-4f1a-aa2d-4fc019652567)
+QR다운로드
+![image](https://github.com/user-attachments/assets/a74d9bec-48f1-4cd8-bfe1-f3f2c1bb047e)
+습득물 등록
+![image](https://github.com/user-attachments/assets/692a70cc-432c-4eee-abe6-d2928341cc74)
+습득물 정보
+![image](https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff)
+습득물 조회
+![image](https://github.com/user-attachments/assets/9fedc251-7421-403c-a69b-ba8defa03a27)
+
 
 트러블슈팅
 ### 1. API 요청 최적화
