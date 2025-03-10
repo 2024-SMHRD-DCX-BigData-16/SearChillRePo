@@ -18,6 +18,7 @@ SearChill
 - 회원 ID를 통해 고유 QR코드를 발급해주는 서비스
 
 페르소나
+
 ● 남숙희(25세, 사회초년생)
 - 출퇴근이 바쁘고 소지품을 많이 들고 다님
 - 지갑이나 디지털 기기(스마트폰, 에어팟)를 자주 잃어버림
@@ -105,3 +106,7 @@ QR다운로드
 ![image](https://github.com/user-attachments/assets/f242b5a2-418b-416d-b4fb-9b338c67516f)
 
 시연영상
+
+
+https://github.com/user-attachments/assets/db12f83b-a8fb-4259-b306-216587cb6fd1
+
