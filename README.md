@@ -98,7 +98,6 @@
   </tr>
 </table>
 
-https://github.com/user-attachments/assets/e3491e51-42b7-4a52-abf4-ba30cd13b3ff
 ---
 
 ## 🚨 트러블슈팅
